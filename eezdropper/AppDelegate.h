@@ -1,15 +1,12 @@
-//
-//  AppDelegate.h
-//  eezdropper
-//
-//  Created by JB Steadman on 2/7/12.
-//  Copyright (c) 2012 self. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
+#import <Rdio/Rdio.h>
+#import "PlayerController.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : NSObject <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) IBOutlet PlayerController *viewController;
+@property (nonatomic, retain) Rdio *rdio;
 
 @end
+

@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		295067DB14E23EED00960BE2 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067D414E23E0800960BE2 /* GameKit.framework */; };
+		295067DC14E23EFC00960BE2 /* Rdio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067D914E23EC900960BE2 /* Rdio.framework */; };
+		295067E514E23F5500960BE2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067E314E23F4D00960BE2 /* Security.framework */; };
+		295067E614E23F5A00960BE2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067E114E23F3B00960BE2 /* SystemConfiguration.framework */; };
+		295067E714E23F5E00960BE2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067DF14E23F2200960BE2 /* CFNetwork.framework */; };
+		295067E814E23F6100960BE2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067DD14E23F0B00960BE2 /* AudioToolbox.framework */; };
+		295067ED14E240CE00960BE2 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295067EC14E240CE00960BE2 /* PlayerController.m */; };
+		295067F014E2464000960BE2 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 295067EF14E2464000960BE2 /* MainWindow.xib */; };
 		29DDA44614E22C850001B7EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DDA44514E22C850001B7EF /* UIKit.framework */; };
 		29DDA44814E22C850001B7EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DDA44714E22C850001B7EF /* Foundation.framework */; };
 		29DDA44A14E22C850001B7EF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DDA44914E22C850001B7EF /* CoreGraphics.framework */; };
@@ -16,15 +24,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		295067D414E23E0800960BE2 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		295067D914E23EC900960BE2 /* Rdio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Rdio.framework; sourceTree = "<group>"; };
+		295067DD14E23F0B00960BE2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		295067DF14E23F2200960BE2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		295067E114E23F3B00960BE2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		295067E314E23F4D00960BE2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		295067EB14E240CE00960BE2 /* PlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerController.h; sourceTree = "<group>"; };
+		295067EC14E240CE00960BE2 /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerController.m; sourceTree = "<group>"; };
+		295067EE14E243C700960BE2 /* ConsumerCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsumerCredentials.h; sourceTree = "<group>"; };
+		295067EF14E2464000960BE2 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29DDA44114E22C850001B7EF /* eezdropper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eezdropper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29DDA44514E22C850001B7EF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		29DDA44714E22C850001B7EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		29DDA44914E22C850001B7EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		29DDA44D14E22C850001B7EF /* eezdropper-Info.plist */ = {isa = PBXFileReference; path = "eezdropper-Info.plist"; sourceTree = "<group>"; };
+		29DDA44D14E22C850001B7EF /* eezdropper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "eezdropper-Info.plist"; sourceTree = "<group>"; };
 		29DDA44F14E22C850001B7EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		29DDA45114E22C850001B7EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		29DDA45314E22C850001B7EF /* eezdropper-Prefix.pch */ = {isa = PBXFileReference; path = "eezdropper-Prefix.pch"; sourceTree = "<group>"; };
-		29DDA45414E22C850001B7EF /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		29DDA45314E22C850001B7EF /* eezdropper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "eezdropper-Prefix.pch"; sourceTree = "<group>"; };
+		29DDA45414E22C850001B7EF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		29DDA45514E22C850001B7EF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -33,15 +51,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29DDA44614E22C850001B7EF /* UIKit.framework in Frameworks */,
+				295067DB14E23EED00960BE2 /* GameKit.framework in Frameworks */,
 				29DDA44814E22C850001B7EF /* Foundation.framework in Frameworks */,
+				29DDA44614E22C850001B7EF /* UIKit.framework in Frameworks */,
 				29DDA44A14E22C850001B7EF /* CoreGraphics.framework in Frameworks */,
+				295067E814E23F6100960BE2 /* AudioToolbox.framework in Frameworks */,
+				295067E714E23F5E00960BE2 /* CFNetwork.framework in Frameworks */,
+				295067E614E23F5A00960BE2 /* SystemConfiguration.framework in Frameworks */,
+				295067E514E23F5500960BE2 /* Security.framework in Frameworks */,
+				295067DC14E23EFC00960BE2 /* Rdio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		295067E914E2406400960BE2 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				295067EA14E2408700960BE2 /* ui */,
+			);
+			name = app;
+			sourceTree = "<group>";
+		};
+		295067EA14E2408700960BE2 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				295067EB14E240CE00960BE2 /* PlayerController.h */,
+				295067EC14E240CE00960BE2 /* PlayerController.m */,
+			);
+			name = ui;
+			sourceTree = "<group>";
+		};
 		29DDA43614E22C850001B7EF = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +103,12 @@
 		29DDA44414E22C850001B7EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				295067E314E23F4D00960BE2 /* Security.framework */,
+				295067E114E23F3B00960BE2 /* SystemConfiguration.framework */,
+				295067DF14E23F2200960BE2 /* CFNetwork.framework */,
+				295067DD14E23F0B00960BE2 /* AudioToolbox.framework */,
+				295067D914E23EC900960BE2 /* Rdio.framework */,
+				295067D414E23E0800960BE2 /* GameKit.framework */,
 				29DDA44514E22C850001B7EF /* UIKit.framework */,
 				29DDA44714E22C850001B7EF /* Foundation.framework */,
 				29DDA44914E22C850001B7EF /* CoreGraphics.framework */,
@@ -72,8 +119,10 @@
 		29DDA44B14E22C850001B7EF /* eezdropper */ = {
 			isa = PBXGroup;
 			children = (
+				295067E914E2406400960BE2 /* app */,
 				29DDA45414E22C850001B7EF /* AppDelegate.h */,
 				29DDA45514E22C850001B7EF /* AppDelegate.m */,
+				295067EE14E243C700960BE2 /* ConsumerCredentials.h */,
 				29DDA44C14E22C850001B7EF /* Supporting Files */,
 			);
 			path = eezdropper;
@@ -82,6 +131,7 @@
 		29DDA44C14E22C850001B7EF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				295067EF14E2464000960BE2 /* MainWindow.xib */,
 				29DDA44D14E22C850001B7EF /* eezdropper-Info.plist */,
 				29DDA44E14E22C850001B7EF /* InfoPlist.strings */,
 				29DDA45114E22C850001B7EF /* main.m */,
@@ -142,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29DDA45014E22C850001B7EF /* InfoPlist.strings in Resources */,
+				295067F014E2464000960BE2 /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +205,7 @@
 			files = (
 				29DDA45214E22C850001B7EF /* main.m in Sources */,
 				29DDA45614E22C850001B7EF /* AppDelegate.m in Sources */,
+				295067ED14E240CE00960BE2 /* PlayerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +271,18 @@
 		29DDA45A14E22C850001B7EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "eezdropper/eezdropper-Prefix.pch";
 				INFOPLIST_FILE = "eezdropper/eezdropper-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				"OTHER_LDFLAGS[arch=*]" = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -230,9 +291,18 @@
 		29DDA45B14E22C850001B7EF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "eezdropper/eezdropper-Prefix.pch";
 				INFOPLIST_FILE = "eezdropper/eezdropper-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				"OTHER_LDFLAGS[arch=*]" = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -257,6 +327,7 @@
 				29DDA45B14E22C850001B7EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
