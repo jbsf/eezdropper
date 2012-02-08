@@ -1,0 +1,264 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		29DDA44614E22C850001B7EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DDA44514E22C850001B7EF /* UIKit.framework */; };
+		29DDA44814E22C850001B7EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DDA44714E22C850001B7EF /* Foundation.framework */; };
+		29DDA44A14E22C850001B7EF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DDA44914E22C850001B7EF /* CoreGraphics.framework */; };
+		29DDA45014E22C850001B7EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29DDA44E14E22C850001B7EF /* InfoPlist.strings */; };
+		29DDA45214E22C850001B7EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DDA45114E22C850001B7EF /* main.m */; };
+		29DDA45614E22C850001B7EF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DDA45514E22C850001B7EF /* AppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		29DDA44114E22C850001B7EF /* eezdropper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eezdropper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29DDA44514E22C850001B7EF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		29DDA44714E22C850001B7EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		29DDA44914E22C850001B7EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		29DDA44D14E22C850001B7EF /* eezdropper-Info.plist */ = {isa = PBXFileReference; path = "eezdropper-Info.plist"; sourceTree = "<group>"; };
+		29DDA44F14E22C850001B7EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		29DDA45114E22C850001B7EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29DDA45314E22C850001B7EF /* eezdropper-Prefix.pch */ = {isa = PBXFileReference; path = "eezdropper-Prefix.pch"; sourceTree = "<group>"; };
+		29DDA45414E22C850001B7EF /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		29DDA45514E22C850001B7EF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		29DDA43E14E22C850001B7EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29DDA44614E22C850001B7EF /* UIKit.framework in Frameworks */,
+				29DDA44814E22C850001B7EF /* Foundation.framework in Frameworks */,
+				29DDA44A14E22C850001B7EF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		29DDA43614E22C850001B7EF = {
+			isa = PBXGroup;
+			children = (
+				29DDA44B14E22C850001B7EF /* eezdropper */,
+				29DDA44414E22C850001B7EF /* Frameworks */,
+				29DDA44214E22C850001B7EF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		29DDA44214E22C850001B7EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29DDA44114E22C850001B7EF /* eezdropper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29DDA44414E22C850001B7EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29DDA44514E22C850001B7EF /* UIKit.framework */,
+				29DDA44714E22C850001B7EF /* Foundation.framework */,
+				29DDA44914E22C850001B7EF /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		29DDA44B14E22C850001B7EF /* eezdropper */ = {
+			isa = PBXGroup;
+			children = (
+				29DDA45414E22C850001B7EF /* AppDelegate.h */,
+				29DDA45514E22C850001B7EF /* AppDelegate.m */,
+				29DDA44C14E22C850001B7EF /* Supporting Files */,
+			);
+			path = eezdropper;
+			sourceTree = "<group>";
+		};
+		29DDA44C14E22C850001B7EF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				29DDA44D14E22C850001B7EF /* eezdropper-Info.plist */,
+				29DDA44E14E22C850001B7EF /* InfoPlist.strings */,
+				29DDA45114E22C850001B7EF /* main.m */,
+				29DDA45314E22C850001B7EF /* eezdropper-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		29DDA44014E22C850001B7EF /* eezdropper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29DDA45914E22C850001B7EF /* Build configuration list for PBXNativeTarget "eezdropper" */;
+			buildPhases = (
+				29DDA43D14E22C850001B7EF /* Sources */,
+				29DDA43E14E22C850001B7EF /* Frameworks */,
+				29DDA43F14E22C850001B7EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = eezdropper;
+			productName = eezdropper;
+			productReference = 29DDA44114E22C850001B7EF /* eezdropper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29DDA43814E22C850001B7EF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = self;
+			};
+			buildConfigurationList = 29DDA43B14E22C850001B7EF /* Build configuration list for PBXProject "eezdropper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 29DDA43614E22C850001B7EF;
+			productRefGroup = 29DDA44214E22C850001B7EF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				29DDA44014E22C850001B7EF /* eezdropper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		29DDA43F14E22C850001B7EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29DDA45014E22C850001B7EF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		29DDA43D14E22C850001B7EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29DDA45214E22C850001B7EF /* main.m in Sources */,
+				29DDA45614E22C850001B7EF /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		29DDA44E14E22C850001B7EF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29DDA44F14E22C850001B7EF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		29DDA45714E22C850001B7EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		29DDA45814E22C850001B7EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		29DDA45A14E22C850001B7EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "eezdropper/eezdropper-Prefix.pch";
+				INFOPLIST_FILE = "eezdropper/eezdropper-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		29DDA45B14E22C850001B7EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "eezdropper/eezdropper-Prefix.pch";
+				INFOPLIST_FILE = "eezdropper/eezdropper-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		29DDA43B14E22C850001B7EF /* Build configuration list for PBXProject "eezdropper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29DDA45714E22C850001B7EF /* Debug */,
+				29DDA45814E22C850001B7EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29DDA45914E22C850001B7EF /* Build configuration list for PBXNativeTarget "eezdropper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29DDA45A14E22C850001B7EF /* Debug */,
+				29DDA45B14E22C850001B7EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29DDA43814E22C850001B7EF /* Project object */;
+}
