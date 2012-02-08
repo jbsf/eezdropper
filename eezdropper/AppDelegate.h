@@ -4,9 +4,7 @@
 
 @interface AppDelegate : NSObject <UIApplicationDelegate>
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet PlayerController *viewController;
-@property (nonatomic, retain) Rdio *rdio;
+@property (nonatomic, retain) UIWindow *window;
 
 @end
 

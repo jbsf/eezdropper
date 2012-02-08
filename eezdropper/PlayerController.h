@@ -1,14 +1,13 @@
 #import <UIKit/UIKit.h>
 #import "Rdio/Rdio.h"
 
-@interface PlayerController : UIViewController<RdioDelegate,RDPlayerDelegate> 
+@interface PlayerController : UITableViewController<RdioDelegate,RDPlayerDelegate,RDAPIRequestDelegate> 
 
-@property (nonatomic, retain) IBOutlet UIButton *playButton;
-@property (nonatomic, retain) IBOutlet UIButton *loginButton;
 @property (nonatomic, retain) RDPlayer *player;
 @property (nonatomic, retain) Rdio *rdio;
+@property (nonatomic, retain) NSArray *tracks;
 
-- (IBAction) playClicked:(id) button;
-- (IBAction) loginClicked:(id) button;
++ (PlayerController *)controller;
+- (void)loadTracks;
 
 @end

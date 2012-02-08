@@ -1,4 +1,5 @@
 #import "PlayerController.h"
+#import "Track.h"
 
 @interface PlayerController ()
 @property (nonatomic, assign) BOOL loggedIn;
@@ -8,10 +9,50 @@
 
 @implementation PlayerController
 
-@synthesize playButton, loginButton, player, rdio, loggedIn, playing, paused;
+@synthesize player, rdio, loggedIn, playing, paused, tracks;
 
-#pragma mark -
-#pragma mark UI event and state handling
++ (PlayerController *)controller {
+    return [[[PlayerController alloc] init] autorelease];
+}
+
+- (void)dealloc {
+    [player release];
+    [rdio release];
+    [tracks release];
+}
+
+- (void)loadTracks {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setValue:@"Track" forKey:@"type"];
+    [self.rdio callAPIMethod:@"getTopCharts" withParameters:params delegate:self];
+}
+
+#pragma mark RDAPIRequestDelegate 
+
+/**
+ * Called when a request succeeds (request completes and 'status' is 'ok').
+ * @param request The request that completed
+ * @param data The 'result' field from the service response JSON, which can be an NSDictionary, NSArray, 
+ *  or NSString etc. depending on the call.
+ */
+- (void)rdioRequest:(RDAPIRequest *)request didLoadData:(id)data {
+    NSLog(@"Here is your data %@", data);
+    NSLog(@"Here is your data %@", [data class]);
+    self.tracks = [Track parseTracks:data];
+    [self.tableView reloadData];
+}
+
+/**
+ * Called when a request fails, either with a transport error, or the service JSON status field 'status' is 'error'.
+ * @param request The request that failed
+ * @param error If it is an NSHTTPURLResponse error the HTTP status code will be used as the error code. 
+ *  If it is an Rdio API error the localizedDescription will contain the 'message' response.
+ */
+- (void)rdioRequest:(RDAPIRequest *)request didFailWithError:(NSError *)error {
+    NSLog(@"bucket of fail");    
+}
+
+#pragma mark IBActions
 
 - (IBAction) playClicked:(id) button {
     if (!self.playing) {
@@ -29,16 +70,6 @@
         [self.rdio authorizeFromController:self];
     }
 }
-
-- (void) setLoggedIn:(BOOL)logged_in {
-    self.loggedIn = logged_in;
-    if (logged_in) {
-        [self.loginButton setTitle:@"Log Out" forState: UIControlStateNormal];
-    } else {
-        [self.loginButton setTitle:@"Log In" forState: UIControlStateNormal];
-    }
-}
-
 
 #pragma mark -
 #pragma mark RdioDelegate
@@ -70,11 +101,30 @@
 - (void) rdioPlayerChangedFromState:(RDPlayerState)fromState toState:(RDPlayerState)state {
     self.playing = (state != RDPlayerStateInitializing && state != RDPlayerStateStopped);
     self.paused = (state == RDPlayerStatePaused);
-    if (self.paused || !playing) {
-        [self.playButton setTitle:@"Play" forState:UIControlStateNormal];
-    } else {
-        [self.playButton setTitle:@"Pause" forState:UIControlStateNormal];
-    }
 }
+
+#pragma mark UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.tracks.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"TrackCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (!cell) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    }
+    
+    cell.textLabel.text = [[self.tracks objectAtIndex:indexPath.row] name];
+    
+    return cell;
+}
+
 
 @end
