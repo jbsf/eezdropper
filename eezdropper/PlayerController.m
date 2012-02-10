@@ -36,8 +36,6 @@
  *  or NSString etc. depending on the call.
  */
 - (void)rdioRequest:(RDAPIRequest *)request didLoadData:(id)data {
-    NSLog(@"Here is your data %@", data);
-    NSLog(@"Here is your data %@", [data class]);
     self.tracks = [Track parseTracks:data];
     [self.tableView reloadData];
 }

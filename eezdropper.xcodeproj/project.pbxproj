@@ -15,6 +15,10 @@
 		295067E814E23F6100960BE2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067DD14E23F0B00960BE2 /* AudioToolbox.framework */; };
 		295067ED14E240CE00960BE2 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295067EC14E240CE00960BE2 /* PlayerController.m */; };
 		29C6828714E264400052FC13 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C6828614E264400052FC13 /* Track.m */; };
+		29C6829914E31D9E0052FC13 /* DataDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C6829814E31D9E0052FC13 /* DataDownloader.m */; };
+		29C6829D14E4D6700052FC13 /* PeerWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C6829C14E4D6700052FC13 /* PeerWatcher.m */; };
+		29C682A014E4F2840052FC13 /* PeerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C6829F14E4F2840052FC13 /* PeerViewController.m */; };
+		29C682A314E4F41D0052FC13 /* Peer.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C682A214E4F41D0052FC13 /* Peer.m */; };
 		29DDA44614E22C850001B7EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DDA44514E22C850001B7EF /* UIKit.framework */; };
 		29DDA44814E22C850001B7EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DDA44714E22C850001B7EF /* Foundation.framework */; };
 		29DDA44A14E22C850001B7EF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DDA44914E22C850001B7EF /* CoreGraphics.framework */; };
@@ -35,6 +39,15 @@
 		29C6828414E25EA30052FC13 /* eezdropper-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "eezdropper-Prefix.pch"; sourceTree = "<group>"; };
 		29C6828514E264400052FC13 /* Track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
 		29C6828614E264400052FC13 /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
+		29C6829714E31D9E0052FC13 /* DataDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataDownloader.h; sourceTree = "<group>"; };
+		29C6829814E31D9E0052FC13 /* DataDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataDownloader.m; sourceTree = "<group>"; };
+		29C6829B14E4D6700052FC13 /* PeerWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeerWatcher.h; sourceTree = "<group>"; };
+		29C6829C14E4D6700052FC13 /* PeerWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeerWatcher.m; sourceTree = "<group>"; };
+		29C6829E14E4F2840052FC13 /* PeerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeerViewController.h; sourceTree = "<group>"; };
+		29C6829F14E4F2840052FC13 /* PeerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeerViewController.m; sourceTree = "<group>"; };
+		29C682A114E4F41C0052FC13 /* Peer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Peer.h; sourceTree = "<group>"; };
+		29C682A214E4F41D0052FC13 /* Peer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Peer.m; sourceTree = "<group>"; };
+		29C682A414E500540052FC13 /* PeerWatcherDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeerWatcherDelegate.h; sourceTree = "<group>"; };
 		29DDA44114E22C850001B7EF /* eezdropper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eezdropper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29DDA44514E22C850001B7EF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		29DDA44714E22C850001B7EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -83,6 +96,8 @@
 			children = (
 				295067EB14E240CE00960BE2 /* PlayerController.h */,
 				295067EC14E240CE00960BE2 /* PlayerController.m */,
+				29C6829E14E4F2840052FC13 /* PeerViewController.h */,
+				29C6829F14E4F2840052FC13 /* PeerViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -102,6 +117,13 @@
 			children = (
 				29C6828514E264400052FC13 /* Track.h */,
 				29C6828614E264400052FC13 /* Track.m */,
+				29C6829714E31D9E0052FC13 /* DataDownloader.h */,
+				29C6829814E31D9E0052FC13 /* DataDownloader.m */,
+				29C6829B14E4D6700052FC13 /* PeerWatcher.h */,
+				29C6829C14E4D6700052FC13 /* PeerWatcher.m */,
+				29C682A114E4F41C0052FC13 /* Peer.h */,
+				29C682A214E4F41D0052FC13 /* Peer.m */,
+				29C682A414E500540052FC13 /* PeerWatcherDelegate.h */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -215,6 +237,10 @@
 				29DDA45614E22C850001B7EF /* AppDelegate.m in Sources */,
 				295067ED14E240CE00960BE2 /* PlayerController.m in Sources */,
 				29C6828714E264400052FC13 /* Track.m in Sources */,
+				29C6829914E31D9E0052FC13 /* DataDownloader.m in Sources */,
+				29C6829D14E4D6700052FC13 /* PeerWatcher.m in Sources */,
+				29C682A014E4F2840052FC13 /* PeerViewController.m in Sources */,
+				29C682A314E4F41D0052FC13 /* Peer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
