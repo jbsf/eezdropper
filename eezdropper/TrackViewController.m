@@ -13,7 +13,9 @@
 @synthesize 
 rdio = rdio_,
 tracks = tracks_,
-playerController = playerController_;
+playerController = playerController_,
+contentView = contentView_,
+tableViewCell = tableViewCell_;
 
 - (id)initWithRdio:(Rdio *)rdio playerController:(PlayerController *)playerController {
     if (self = [super init]) {
@@ -73,18 +75,35 @@ playerController = playerController_;
     static NSString *CellIdentifier = @"TrackCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (!cell) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    if (cell == nil) {
+        [[NSBundle mainBundle] loadNibNamed:@"TrackView" owner:self options:nil];
+        cell = self.tableViewCell;
+        [cell.contentView addSubview:self.contentView];
+        self.tableViewCell = nil;
+        self.contentView = nil;
     }
     
-    cell.textLabel.text = [[self.tracks objectAtIndex:indexPath.row] name];
+    UIView *realContentView = [cell.contentView.subviews lastObject];
+    UILabel *topLabel    = (UILabel *)[realContentView viewWithTag:1];
+    UILabel *bottomLabel = (UILabel *)[realContentView viewWithTag:2];
+    
+    Track *track = [self.tracks objectAtIndex:indexPath.row];
+    
+    topLabel.text = track.name;
+    bottomLabel.text = track.artist;
     
     return cell;
 }
 
+#pragma mark UITableViewDelegate
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Track *track = [self.tracks objectAtIndex:indexPath.row];
     [self.playerController playTrack:track];    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 40;
 }
 
 

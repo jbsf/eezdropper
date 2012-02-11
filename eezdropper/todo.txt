@@ -1,10 +1,8 @@
-- hearbeats
-- local playback
-- broadbasting local playback on hearbeat
-- playback of peer's tracks
-- syncing playback between peers
 - table cell styling
 - background downloading of images
+- syncing playback between peers
+- connection stability
+- player view
 - log in to rdio
 - better playlist
 - deploy to other devices
