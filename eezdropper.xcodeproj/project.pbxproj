@@ -17,6 +17,7 @@
 		295067E714E23F5E00960BE2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067DF14E23F2200960BE2 /* CFNetwork.framework */; };
 		295067E814E23F6100960BE2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067DD14E23F0B00960BE2 /* AudioToolbox.framework */; };
 		295067ED14E240CE00960BE2 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295067EC14E240CE00960BE2 /* PlayerController.m */; };
+		2968D4CF14E704DC00E19DB7 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2968D4CE14E704DC00E19DB7 /* AsyncImageView.m */; };
 		29C6828714E264400052FC13 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C6828614E264400052FC13 /* Track.m */; };
 		29C6829914E31D9E0052FC13 /* DataDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C6829814E31D9E0052FC13 /* DataDownloader.m */; };
 		29C6829D14E4D6700052FC13 /* PeerWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C6829C14E4D6700052FC13 /* PeerWatcher.m */; };
@@ -45,6 +46,8 @@
 		295067E114E23F3B00960BE2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		295067EB14E240CE00960BE2 /* PlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerController.h; sourceTree = "<group>"; };
 		295067EC14E240CE00960BE2 /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerController.m; sourceTree = "<group>"; };
+		2968D4CE14E704DC00E19DB7 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
+		2968D4D014E704EA00E19DB7 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncImageView.h; path = ../../../../../Users/jb/workspace/eezdropper/eezdropper/AsyncImageView.h; sourceTree = "<group>"; };
 		29C6828414E25EA30052FC13 /* eezdropper-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "eezdropper-Prefix.pch"; sourceTree = "<group>"; };
 		29C6828514E264400052FC13 /* Track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
 		29C6828614E264400052FC13 /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
@@ -99,6 +102,23 @@
 				29C6828214E25A900052FC13 /* Resources */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		2968D4CB14E7042E00E19DB7 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				2968D4CD14E7043E00E19DB7 /* AsyncImageView */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		2968D4CD14E7043E00E19DB7 /* AsyncImageView */ = {
+			isa = PBXGroup;
+			children = (
+				2968D4CE14E704DC00E19DB7 /* AsyncImageView.m */,
+				2968D4D014E704EA00E19DB7 /* AsyncImageView.h */,
+			);
+			name = AsyncImageView;
 			sourceTree = "<group>";
 		};
 		29C6828114E25A860052FC13 /* Controllers */ = {
@@ -180,6 +200,7 @@
 		29DDA44B14E22C850001B7EF /* App */ = {
 			isa = PBXGroup;
 			children = (
+				2968D4CB14E7042E00E19DB7 /* External */,
 				29C6828314E25AAB0052FC13 /* Domain */,
 				295067EA14E2408700960BE2 /* UI */,
 			);
@@ -262,6 +283,7 @@
 				29C682A014E4F2840052FC13 /* PeerViewController.m in Sources */,
 				29C682A314E4F41D0052FC13 /* Peer.m in Sources */,
 				29445BB014E659A4000BE425 /* TrackViewController.m in Sources */,
+				2968D4CF14E704DC00E19DB7 /* AsyncImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
