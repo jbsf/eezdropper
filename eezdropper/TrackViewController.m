@@ -6,6 +6,7 @@
 @property (nonatomic, retain) Rdio *rdio;
 @property (nonatomic, retain) NSArray *tracks;
 @property (nonatomic, retain) PlayerController *playerController;
+@property (nonatomic, retain) MHLazyTableImages *lazyImages;
 @end
 
 @implementation TrackViewController
@@ -15,12 +16,16 @@ rdio = rdio_,
 tracks = tracks_,
 playerController = playerController_,
 contentView = contentView_,
+lazyImages = lazyImages_,
 tableViewCell = tableViewCell_;
 
 - (id)initWithRdio:(Rdio *)rdio playerController:(PlayerController *)playerController {
     if (self = [super init]) {
         self.rdio = rdio;
         self.playerController = playerController;
+        self.lazyImages = [[MHLazyTableImages alloc] init];
+		self.lazyImages.placeholderImage = [UIImage imageNamed:@"trackPlaceholder"];
+		self.lazyImages.delegate = self;
     }
     return self;
 }
@@ -29,6 +34,9 @@ tableViewCell = tableViewCell_;
     [playerController_ release];
     [rdio_ release];
     [tracks_ release];
+    [lazyImages_ release];
+	self.lazyImages.delegate = nil;
+	[lazyImages_ release];
     [super dealloc];
 }
 
@@ -36,6 +44,16 @@ tableViewCell = tableViewCell_;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:@"Track" forKey:@"type"];
     [self.rdio callAPIMethod:@"getTopCharts" withParameters:params delegate:self];
+}
+
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	self.lazyImages.tableView = self.tableView;
+}
+
+- (void)viewDidUnload {
+	[super viewDidUnload];
+	self.lazyImages.tableView = nil;
 }
 
 #pragma mark RDAPIRequestDelegate 
@@ -83,14 +101,16 @@ tableViewCell = tableViewCell_;
         self.contentView = nil;
     }
     
+    Track *track = [self.tracks objectAtIndex:indexPath.row];
+
     UIView *realContentView = [cell.contentView.subviews lastObject];
     UILabel *topLabel    = (UILabel *)[realContentView viewWithTag:1];
     UILabel *bottomLabel = (UILabel *)[realContentView viewWithTag:2];
-    
-    Track *track = [self.tracks objectAtIndex:indexPath.row];
-    
+        
     topLabel.text = track.name;
     bottomLabel.text = track.artist;
+    
+    [self.lazyImages addLazyImageForCell:cell withIndexPath:indexPath];
     
     return cell;
 }
@@ -106,5 +126,39 @@ tableViewCell = tableViewCell_;
     return 40;
 }
 
+#pragma mark MHLazyTableImagesDelegate 
+
+- (NSURL*)lazyImageURLForIndexPath:(NSIndexPath*)indexPath {
+    Track *track = [self.tracks objectAtIndex:indexPath.row];
+    NSLog(@"returning iconURL: %@", track.iconURL);
+    return [NSURL URLWithString:track.iconURL];
+}
+
+#pragma mark UIScrollViewDelegate
+
+- (void)scrollViewDidEndDragging:(UIScrollView*)scrollView willDecelerate:(BOOL)decelerate {
+	[self.lazyImages scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView*)scrollView {
+	[self.lazyImages scrollViewDidEndDecelerating:scrollView];
+}
+
+- (UIImage*)postProcessLazyImage:(UIImage*)image forIndexPath:(NSIndexPath*)indexPath {
+    if (image.size.width != 35 && image.size.height != 35)
+	{
+        CGSize itemSize = CGSizeMake(35, 35);
+		UIGraphicsBeginImageContextWithOptions(itemSize, YES, 0);
+		CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+		[image drawInRect:imageRect];
+		UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+		UIGraphicsEndImageContext();
+		return newImage;
+    }
+    else
+    {
+        return image;
+    }
+}
 
 @end
