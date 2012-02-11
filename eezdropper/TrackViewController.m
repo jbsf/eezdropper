@@ -1,7 +1,6 @@
 #import "TrackViewController.h"
 #import "Track.h"
 #import "PlayerController.h"
-#import "AsyncImageView.h"
 
 @interface TrackViewController ()
 @property (nonatomic, retain) Rdio *rdio;
@@ -82,25 +81,14 @@ tableViewCell = tableViewCell_;
         [cell.contentView addSubview:self.contentView];
         self.tableViewCell = nil;
         self.contentView = nil;
-    } else {
-        AsyncImageView* oldImage = (AsyncImageView*) [cell.contentView viewWithTag:999];
-        [oldImage removeFromSuperview];
     }
-        
+    
     UIView *realContentView = [cell.contentView.subviews lastObject];
     UILabel *topLabel    = (UILabel *)[realContentView viewWithTag:1];
     UILabel *bottomLabel = (UILabel *)[realContentView viewWithTag:2];
     
     Track *track = [self.tracks objectAtIndex:indexPath.row];
     
-    CGRect frame = CGRectMake(0, 0, 35, 35);
-	AsyncImageView* asyncImage = [[[AsyncImageView alloc] initWithFrame:frame] autorelease];
-    
-	asyncImage.tag = 999;
-	[asyncImage loadImageFromURL:[NSURL URLWithString:track.iconURL]];
-    
-	[realContentView addSubview:asyncImage];
-
     topLabel.text = track.name;
     bottomLabel.text = track.artist;
     
