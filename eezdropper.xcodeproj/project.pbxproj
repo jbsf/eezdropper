@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290476A214E71BE10012E6BE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290476A114E71BE10012E6BE /* LoginViewController.m */; };
+		290476A514E71C580012E6BE /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 290476A414E71C580012E6BE /* LoginView.xib */; };
 		29445BAD14E657F0000BE425 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29445BAB14E6569F000BE425 /* Security.framework */; };
 		29445BB014E659A4000BE425 /* TrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29445BAF14E659A4000BE425 /* TrackViewController.m */; };
 		29445BB214E669A6000BE425 /* TrackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29445BB114E669A6000BE425 /* TrackView.xib */; };
@@ -33,6 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		290476A014E71BE10012E6BE /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../../../../../Users/jb/workspace/eezdropper/eezdropper/LoginViewController.h; sourceTree = "<group>"; };
+		290476A114E71BE10012E6BE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../../../../../Users/jb/workspace/eezdropper/eezdropper/LoginViewController.m; sourceTree = "<group>"; };
+		290476A414E71C580012E6BE /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginView.xib; path = ../../../../../Users/jb/workspace/eezdropper/eezdropper/LoginView.xib; sourceTree = "<group>"; };
 		29445BA814E63E4E000BE425 /* PlayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerDelegate.h; sourceTree = "<group>"; };
 		29445BAB14E6569F000BE425 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		29445BAE14E659A4000BE425 /* TrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackViewController.h; sourceTree = "<group>"; };
@@ -130,6 +135,8 @@
 				29C6829F14E4F2840052FC13 /* PeerViewController.m */,
 				29445BAE14E659A4000BE425 /* TrackViewController.h */,
 				29445BAF14E659A4000BE425 /* TrackViewController.m */,
+				290476A014E71BE10012E6BE /* LoginViewController.h */,
+				290476A114E71BE10012E6BE /* LoginViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -143,6 +150,7 @@
 				29DDA44E14E22C850001B7EF /* InfoPlist.strings */,
 				29C682A514E61AAE0052FC13 /* todo.txt */,
 				29445BB114E669A6000BE425 /* TrackView.xib */,
+				290476A414E71C580012E6BE /* LoginView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -264,6 +272,7 @@
 				29C682A614E61AAE0052FC13 /* todo.txt in Resources */,
 				29445BB214E669A6000BE425 /* TrackView.xib in Resources */,
 				29445BB614E67677000BE425 /* trackViewBackground.png in Resources */,
+				290476A514E71C580012E6BE /* LoginView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +293,7 @@
 				29C682A314E4F41D0052FC13 /* Peer.m in Sources */,
 				29445BB014E659A4000BE425 /* TrackViewController.m in Sources */,
 				2968D4CF14E704DC00E19DB7 /* AsyncImageView.m in Sources */,
+				290476A214E71BE10012E6BE /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

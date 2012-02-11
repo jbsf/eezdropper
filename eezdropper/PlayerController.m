@@ -54,25 +54,6 @@ playerDelegate = playerDelegate_;
 }
 
 #pragma mark -
-#pragma mark RdioDelegate
-
-- (void) rdioDidAuthorizeUser:(NSDictionary *)user withAccessToken:(NSString *)accessToken {
-    [self setLoggedIn:YES];
-}
-
-- (void) rdioAuthorizationFailed:(NSString *)error {
-    [self setLoggedIn:NO];
-}
-
-- (void) rdioAuthorizationCancelled {
-    [self setLoggedIn:NO];
-}
-
-- (void) rdioDidLogout {
-    [self setLoggedIn:NO];
-}
-
-#pragma mark -
 #pragma mark RDPlayerDelegate
 
 - (BOOL) rdioIsPlayingElsewhere {

@@ -3,6 +3,10 @@
 #import "PeerWatcherDelegate.h"
 #import "PlayerDelegate.h"
 
+@class Peer;
+
 @interface PeerWatcher : NSObject<GKSessionDelegate, PlayerDelegate>
-- (id)initWithDelegate:(id<PeerWatcherDelegate>)delegate;
+
+- (id)initWithLocalPeer:(Peer *)localPeer delegate:(id<PeerWatcherDelegate>)delegate;
+
 @end

@@ -15,7 +15,6 @@
 - (void)logAllPeers;
 - (void)startTimer;
 - (NSString *)displayName;
-- (Peer *)localPeer:(Track *)track;
 @end
 
 @implementation PeerWatcher 
@@ -26,14 +25,15 @@ peerWatcherDelegate = peerWatcherDelegate_,
 localPeer = localPeer_,
 peerNames = peerNames_;
 
-- (id)initWithDelegate:(id<PeerWatcherDelegate>)delegate {
+- (id)initWithLocalPeer:(Peer *)localPeer delegate:(id<PeerWatcherDelegate>)delegate {
     if (self = [super init]) {
         self.peerWatcherDelegate = delegate;
         self.session = [[[GKSession alloc] initWithSessionID:@"eezdropper" displayName:[UIDevice currentDevice].name sessionMode:GKSessionModePeer] autorelease];
         self.session.delegate = self;
         [self.session setDataReceiveHandler:self withContext:nil];
         self.session.available = YES;
-        self.localPeer = [[[Peer alloc] initWithName:self.displayName identifier:self.session.peerID track:nil] autorelease];
+        self.localPeer = localPeer;
+        self.localPeer.identifier = self.session.peerID;
         [self startTimer];
     }
     return self;
@@ -53,7 +53,8 @@ peerNames = peerNames_;
         [self.session connectToPeer:peerID withTimeout:20];        
     } else if (state == GKPeerStateUnavailable || state == GKPeerStateDisconnected) {
         NSLog(@"notifying peer did leave: %@ %@", [session displayNameForPeer:peerID], peerID);
-        Peer *peer = [[[Peer alloc] initWithName:nil identifier:peerID track:nil] autorelease];
+        Peer *peer = [[[Peer alloc] init] autorelease];
+        peer.identifier = peerID;
         [self.peerWatcherDelegate peerDidLeave:peer];
     }
 
@@ -143,14 +144,12 @@ peerNames = peerNames_;
 
 - (void)playerDidStart:(Track *)track {
     NSLog(@"peerWatcher playerDidStart track name: %@", track.name);
-    
-    self.localPeer = [[[Peer alloc] initWithName:self.displayName identifier:self.session.peerID track:track] autorelease];
+    self.localPeer.track = track;    
     [self updatePeers];
 }
 
 - (void)playerDidPause {
     
 }
-
 
 @end

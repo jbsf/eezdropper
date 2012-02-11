@@ -1,9 +1,9 @@
-- table cell styling
-- background downloading of images
+- log in to rdio
+- peer table cell styling
 - syncing playback between peers
 - connection stability
-- player view
+- tabs on top
+- player controls
 - deploy to other devices
 - caching thumbnails
-- log in to rdio
 - better playlist

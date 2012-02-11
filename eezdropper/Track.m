@@ -5,7 +5,7 @@
 @synthesize name, artist, iconURL, key;
 
 + (NSArray *)parseTracks:(NSArray *)properties {
-    NSLog(@"tracks: %@", properties);
+//    NSLog(@"tracks: %@", properties);
     NSMutableArray *tracks = [NSMutableArray array];
     for (NSDictionary *trackProperties in properties) {
         Track *track  = [[[Track alloc] init] autorelease];

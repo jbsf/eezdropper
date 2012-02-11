@@ -5,11 +5,17 @@
 @interface Peer : NSObject<NSCoding>
 
 @property (nonatomic, retain) NSString *identifier;
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *firstName;
+@property (nonatomic, retain) NSString *lastName;
+@property (nonatomic, retain) NSString *iconURL;
+@property (nonatomic, retain) NSString *rdioKey;
+
 @property (nonatomic, retain) Track *track;
 
 + (Peer *)deserialize:(NSData *)data;
 
-- (id)initWithName:(NSString *)name identifier:(NSString *)identifier track:(Track *)track;
+- (id)initWithIdentifier:(NSString *)identifier;
+- (NSString *)name;
 - (NSData *)serialize;
+
 @end

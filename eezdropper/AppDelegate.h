@@ -7,7 +7,10 @@
 @interface AppDelegate : NSObject <UIApplicationDelegate>
 
 @property (nonatomic, retain) UIWindow *window;
+@property (nonatomic, retain) Rdio *rdio;
 @property (nonatomic, retain) PeerWatcher *peerWatcher;
+
+- (void)showApp:(NSString *)accessToken;
 
 @end
 

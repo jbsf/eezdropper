@@ -118,5 +118,24 @@ tableViewCell = tableViewCell_;
     return 40;
 }
 
+#pragma mark -
+#pragma mark RdioDelegate
+
+- (void) rdioDidAuthorizeUser:(NSDictionary *)userData withAccessToken:(NSString *)accessToken {
+    NSLog(@"TrackViewController authorization succeeded. token = %@", accessToken);
+    NSLog(@"user data: %@", userData);
+}
+
+- (void) rdioAuthorizationFailed:(NSString *)error {
+    NSLog(@"----------- TrackViewControlelr authorization failed with error: %@", error);
+}
+
+- (void) rdioAuthorizationCancelled {
+    NSLog(@"----------- TrackViewController authorization cancelled");
+}
+
+- (void) rdioDidLogout {
+    NSLog(@"-----------TrackViewController rdioDidLogout");
+}
 
 @end

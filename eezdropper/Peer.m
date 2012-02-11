@@ -3,7 +3,13 @@
 
 @implementation Peer
 
-@synthesize name = name_, identifier = identifier_, track = track_;
+@synthesize 
+firstName = firstName_,
+lastName = lastName_,
+rdioKey = rdioKey_,
+iconURL = iconURL_,
+identifier = identifier_, 
+track = track_;
 
 + (Peer *)deserialize:(NSData *)data {
     NSKeyedUnarchiver *unarchiver;
@@ -13,18 +19,19 @@
     return peer;
 }
 
-- (id)initWithName:(NSString *)name identifier:(NSString *)identifier track:(Track *)track {
+- (id)initWithIdentifier:(NSString *)identifier {
     if (self = [super init]) {
-        self.name = name;
         self.identifier = identifier;
-        self.track = track;
     }
     return self;
 }
 
 - (id)initWithCoder:(NSCoder*)coder {
     if (self = [super init]) {
-        self.name       = [coder decodeObjectForKey:@"name"];
+        self.firstName  = [coder decodeObjectForKey:@"firstName"];
+        self.lastName   = [coder decodeObjectForKey:@"lastName"];
+        self.rdioKey    = [coder decodeObjectForKey:@"rdioKey"];
+        self.iconURL    = [coder decodeObjectForKey:@"iconURL"];
         self.identifier = [coder decodeObjectForKey:@"identifier"];
         self.track      = [coder decodeObjectForKey:@"track"];
     }
@@ -32,7 +39,10 @@
 }
 
 - (void)dealloc {
-    [name_ release];
+    [firstName_ release];
+    [lastName_ release];
+    [rdioKey_ release];
+    [iconURL_ release];
     [identifier_ release];
     [track_ release];
     [super dealloc];
@@ -56,8 +66,15 @@
 
 - (void)encodeWithCoder:(NSCoder *)coder {
     [coder encodeObject:self.track      forKey:@"track"];
-    [coder encodeObject:self.name       forKey:@"name"];
+    [coder encodeObject:self.firstName  forKey:@"firstName"];
+    [coder encodeObject:self.lastName   forKey:@"lastName"];
+    [coder encodeObject:self.rdioKey    forKey:@"rdioKey"];
+    [coder encodeObject:self.iconURL    forKey:@"iconURL"];
     [coder encodeObject:self.identifier forKey:@"identifier"];
+}
+
+- (NSString *)name {
+    return [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
 }
 
 @end
