@@ -25,6 +25,8 @@
     
     self.peerWatcher = [[PeerWatcher alloc] initWithDelegate:peerViewController];
     
+    playerController.playerDelegate = self.peerWatcher;
+    
     // Add the view controller's view to the window and display.
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
@@ -36,6 +38,29 @@
     [window_ release];
     [peerWatcher_ release];
     [super dealloc];
+}
+
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    NSLog(@"--------applicationDidBecomeActive");
+}
+- (void)applicationWillResignActive:(UIApplication *)application {
+    NSLog(@"--------applicationWillResignActive");
+}
+
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+    NSLog(@"--------applicationDidReceiveMemoryWarning");
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+    NSLog(@"--------applicationWillTerminate");    
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    NSLog(@"--------applicationDidEnterBackground");
+}
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    NSLog(@"--------applicationWillEnterForeground");
 }
 
 @end

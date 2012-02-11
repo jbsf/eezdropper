@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 
-@interface Track : NSObject
+@interface Track : NSObject<NSCoding>
+
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *artist;
 @property (nonatomic, retain) NSString *iconURL;

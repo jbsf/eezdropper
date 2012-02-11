@@ -1,4 +1,6 @@
 #import "PeerViewController.h"
+#import "Peer.h"
+#import "Track.h"
 
 @interface PeerViewController ()
 @property (nonatomic, retain) NSMutableArray *peers;
@@ -38,7 +40,9 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    cell.textLabel.text = [[self.peers objectAtIndex:indexPath.row] name];
+    Peer *peer = [self.peers objectAtIndex:indexPath.row];
+    NSString *trackName = peer.track ? [NSString stringWithFormat:@" - %@", peer.track.name] : @"";
+    cell.textLabel.text = [NSString stringWithFormat:@"%@%@", peer.name, trackName];
     
     return cell;
 }
@@ -51,10 +55,14 @@
 }
 
 - (void)peerDidArrive:(Peer *)peer {
-    if (![self.peers containsObject:peer]) {
+    NSUInteger index = [self.peers indexOfObject:peer];
+    if (index == NSNotFound) {
         [self.peers addObject:peer];
-        [self.tableView reloadData];
+    } else {
+        [self.peers replaceObjectAtIndex:index withObject:peer];
     }
+
+    [self.tableView reloadData];
 }
 
 @end

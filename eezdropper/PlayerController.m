@@ -1,5 +1,6 @@
 #import "PlayerController.h"
 #import "Track.h"
+#import "PlayerDelegate.h"
 
 @interface PlayerController ()
 @property (nonatomic, assign) BOOL loggedIn;
@@ -9,16 +10,23 @@
 
 @implementation PlayerController
 
-@synthesize player, rdio, loggedIn, playing, paused, tracks;
+@synthesize 
+player = player_, 
+rdio = rdio_, 
+loggedIn = loggedIn_, 
+playing = playing_, 
+paused = paused_,
+playerDelegate = playerDelegate_,
+tracks = tracks_;
 
 + (PlayerController *)controller {
     return [[[PlayerController alloc] init] autorelease];
 }
 
 - (void)dealloc {
-    [player release];
-    [rdio release];
-    [tracks release];
+    [player_ release];
+    [rdio_ release];
+    [tracks_ release];
 }
 
 - (void)loadTracks {
@@ -122,6 +130,11 @@
     cell.textLabel.text = [[self.tracks objectAtIndex:indexPath.row] name];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Track *track = [self.tracks objectAtIndex:indexPath.row];
+    [self.playerDelegate playerDidStart:track];
 }
 
 
