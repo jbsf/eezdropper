@@ -2,25 +2,13 @@
 #import "Peer.h"
 
 @interface PeerWatcher ()
-
-@property (nonatomic, retain) GKSession *gkSession;
-@property (nonatomic, assign) id<PeerWatcherDelegate> peerWatcherDelegate;
-@property (nonatomic, retain) NSDictionary *peerNames;
-
 - (NSString *)connectionState:(GKPeerConnectionState)state;
-- (void)updatePeers;
-- (void)logPeers:(GKPeerConnectionState)peerState;
-- (void)logAllPeers;
-- (void)startTimer;
-- (NSString *)displayName;
+- (void)updatePeers:(GKSession *)session;
 @end
 
 @implementation PeerWatcher 
 
-@synthesize 
-gkSession = gkSession_, 
-peerWatcherDelegate = peerWatcherDelegate_,
-peerNames = peerNames_;
+@synthesize gkSession = gkSession_, peerWatcherDelegate = peerWatcherDelegate_;
 
 - (id)initWithDelegate:(id<PeerWatcherDelegate>)delegate {
     if (self = [super init]) {
@@ -29,14 +17,12 @@ peerNames = peerNames_;
         self.gkSession.delegate = self;
         [self.gkSession setDataReceiveHandler:self withContext:nil];
         self.gkSession.available = YES;
-        [self startTimer];
     }
     return self;
 }
 
 - (void)dealloc {
     [gkSession_ release];
-    [peerNames_ release];
     [super dealloc];
 }
 
@@ -46,12 +32,11 @@ peerNames = peerNames_;
         NSLog(@"connecting to peer: %@ %@", [session displayNameForPeer:peerID], peerID);        
         [self.gkSession connectToPeer:peerID withTimeout:20];        
     } else if (state == GKPeerStateUnavailable || state == GKPeerStateDisconnected) {
-        NSLog(@"notifying peer did leave: %@ %@", [session displayNameForPeer:peerID], peerID);
         Peer *peer = [[[Peer alloc] initWithName:nil identifier:peerID track:nil] autorelease];
         [self.peerWatcherDelegate peerDidLeave:peer];
     }
 
-    [self updatePeers];
+    [self updatePeers:session];
 }
 
 - (void)session:(GKSession *)session didReceiveConnectionRequestFromPeer:(NSString *)peerID {
@@ -61,7 +46,7 @@ peerNames = peerNames_;
         NSLog(@"error accepting connection from peer: %@ %@, %@", [session displayNameForPeer:peerID], peerID, [error description]);
     } else {
         NSLog(@"connection succeeded from peer: %@ %@", [session displayNameForPeer:peerID], peerID);
-        [self updatePeers];
+        [self updatePeers:session];
     }
 }
 
@@ -76,16 +61,15 @@ peerNames = peerNames_;
 - (void)receiveData:(NSData *)data fromPeer:(NSString *)peerID inSession:(GKSession *)session context:(void *)context {
     NSString *peerName = [NSString stringWithUTF8String:[data bytes]];
     NSLog(@"received data: %@ from peer: %@ %@", peerName, [session displayNameForPeer:peerID], peerID);
-    Peer *peer = [[[Peer alloc] initWithName:peerName identifier:peerID track:nil] autorelease];
+    Peer *peer = [[[Peer alloc] initWithName:peerName identifier:peerName track:nil] autorelease];
     [self.peerWatcherDelegate peerDidArrive:peer];
 }
 
-- (void)updatePeers {
-    NSData *data = [self.displayName dataUsingEncoding:NSUTF8StringEncoding];
+- (void)updatePeers:(GKSession *)session {
+    NSData *data = [session.displayName dataUsingEncoding:NSUTF8StringEncoding];
     NSError *error = nil;
-    NSLog(@"%@ %@ updating peers with data %@", self.gkSession.peerID, self.displayName, [NSString stringWithUTF8String:[data bytes]]);
     
-    if (![self.gkSession sendDataToAllPeers:data withDataMode:GKSendDataReliable error:&error]) {
+    if (![session sendDataToAllPeers:data withDataMode:GKSendDataUnreliable error:&error]) {
         NSLog(@"error sending data to peers: %@", error);
     }    
 }
@@ -103,30 +87,6 @@ peerNames = peerNames_;
         case GKPeerStateConnecting:
             return @"GKPeerStateConnecting";
     }
-}
-
-- (void)logAllPeers {
-    [self logPeers:GKPeerStateAvailable];
-    [self logPeers:GKPeerStateConnected];
-    [self logPeers:GKPeerStateConnecting];
-    [self logPeers:GKPeerStateDisconnected];
-    [self logPeers:GKPeerStateUnavailable];
-    [self updatePeers];
-}
-
-- (void)logPeers:(GKPeerConnectionState)peerState {
-    NSArray *peers = [self.gkSession peersWithConnectionState:peerState];
-    if ([peers count] > 0) {
-        NSLog(@"%@ peers: %@", [self connectionState:peerState], peers);            
-    }
-}
-
-- (void)startTimer {
-    [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(logAllPeers) userInfo:nil repeats:YES];
-}
-
-- (NSString *)displayName {
-    return [UIDevice currentDevice].name;
 }
 
 @end
