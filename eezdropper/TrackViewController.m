@@ -93,7 +93,7 @@ tableViewCell = tableViewCell_;
     
     Track *track = [self.tracks objectAtIndex:indexPath.row];
     
-    CGRect frame = CGRectMake(0, 0, 35, 35);
+    CGRect frame = CGRectMake(5, 4, 30, 30);
 	AsyncImageView* asyncImage = [[[AsyncImageView alloc] initWithFrame:frame] autorelease];
     
 	asyncImage.tag = 999;

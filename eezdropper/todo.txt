@@ -3,6 +3,7 @@
 - syncing playback between peers
 - connection stability
 - player view
+- deploy to other devices
+- caching thumbnails
 - log in to rdio
 - better playlist
-- deploy to other devices

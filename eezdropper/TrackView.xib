@@ -85,7 +85,7 @@
 					<object class="IBUILabel" id="519493996">
 						<reference key="NSNextResponder" ref="515857731"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{37, 0}, {258, 21}}</string>
+						<string key="NSFrame">{{40, 0}, {258, 21}}</string>
 						<reference key="NSSuperview" ref="515857731"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="736007931"/>
@@ -110,21 +110,20 @@
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 						<object class="IBUIFontDescription" key="IBUIFontDescription">
 							<int key="type">2</int>
-							<double key="pointSize">16</double>
+							<double key="pointSize">15</double>
 						</object>
 						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">Helvetica-Bold</string>
-							<double key="NSSize">16</double>
+							<double key="NSSize">15</double>
 							<int key="NSfFlags">16</int>
 						</object>
 					</object>
 					<object class="IBUILabel" id="736007931">
 						<reference key="NSNextResponder" ref="515857731"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{37, 18}, {258, 21}}</string>
+						<string key="NSFrame">{{40, 17}, {258, 21}}</string>
 						<reference key="NSSuperview" ref="515857731"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
