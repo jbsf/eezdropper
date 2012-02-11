@@ -1,5 +1,10 @@
 #import <UIKit/UIKit.h>
 #import "PeerWatcherDelegate.h"
 
-@interface PeerViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate, PeerWatcherDelegate>
+@class PlayerController;
+
+@interface PeerViewController : UITableViewController<PeerWatcherDelegate>
+
+- (id)initWithPlayerController:(PlayerController *)playerController;
+
 @end

@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29445BAD14E657F0000BE425 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29445BAB14E6569F000BE425 /* Security.framework */; };
+		29445BB014E659A4000BE425 /* TrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29445BAF14E659A4000BE425 /* TrackViewController.m */; };
 		295067DB14E23EED00960BE2 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067D414E23E0800960BE2 /* GameKit.framework */; };
 		295067DC14E23EFC00960BE2 /* Rdio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067D914E23EC900960BE2 /* Rdio.framework */; };
-		295067E514E23F5500960BE2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067E314E23F4D00960BE2 /* Security.framework */; };
 		295067E614E23F5A00960BE2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067E114E23F3B00960BE2 /* SystemConfiguration.framework */; };
 		295067E714E23F5E00960BE2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067DF14E23F2200960BE2 /* CFNetwork.framework */; };
 		295067E814E23F6100960BE2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067DD14E23F0B00960BE2 /* AudioToolbox.framework */; };
@@ -44,12 +45,14 @@
 		29445B6214E63ABF000BE425 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		29445B6D14E63B3D000BE425 /* FooSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FooSpec.m; sourceTree = "<group>"; };
 		29445BA814E63E4E000BE425 /* PlayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerDelegate.h; sourceTree = "<group>"; };
+		29445BAB14E6569F000BE425 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		29445BAE14E659A4000BE425 /* TrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackViewController.h; sourceTree = "<group>"; };
+		29445BAF14E659A4000BE425 /* TrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackViewController.m; sourceTree = "<group>"; };
 		295067D414E23E0800960BE2 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		295067D914E23EC900960BE2 /* Rdio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Rdio.framework; sourceTree = "<group>"; };
 		295067DD14E23F0B00960BE2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		295067DF14E23F2200960BE2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		295067E114E23F3B00960BE2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		295067E314E23F4D00960BE2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		295067EB14E240CE00960BE2 /* PlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerController.h; sourceTree = "<group>"; };
 		295067EC14E240CE00960BE2 /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerController.m; sourceTree = "<group>"; };
 		29C6828414E25EA30052FC13 /* eezdropper-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "eezdropper-Prefix.pch"; sourceTree = "<group>"; };
@@ -81,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29445BAD14E657F0000BE425 /* Security.framework in Frameworks */,
 				295067DB14E23EED00960BE2 /* GameKit.framework in Frameworks */,
 				29DDA44814E22C850001B7EF /* Foundation.framework in Frameworks */,
 				29DDA44614E22C850001B7EF /* UIKit.framework in Frameworks */,
@@ -88,7 +92,6 @@
 				295067E814E23F6100960BE2 /* AudioToolbox.framework in Frameworks */,
 				295067E714E23F5E00960BE2 /* CFNetwork.framework in Frameworks */,
 				295067E614E23F5A00960BE2 /* SystemConfiguration.framework in Frameworks */,
-				295067E514E23F5500960BE2 /* Security.framework in Frameworks */,
 				295067DC14E23EFC00960BE2 /* Rdio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,6 +177,8 @@
 				295067EC14E240CE00960BE2 /* PlayerController.m */,
 				29C6829E14E4F2840052FC13 /* PeerViewController.h */,
 				29C6829F14E4F2840052FC13 /* PeerViewController.m */,
+				29445BAE14E659A4000BE425 /* TrackViewController.h */,
+				29445BAF14E659A4000BE425 /* TrackViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -229,7 +234,7 @@
 		29DDA44414E22C850001B7EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				295067E314E23F4D00960BE2 /* Security.framework */,
+				29445BAB14E6569F000BE425 /* Security.framework */,
 				295067E114E23F3B00960BE2 /* SystemConfiguration.framework */,
 				295067DF14E23F2200960BE2 /* CFNetwork.framework */,
 				295067DD14E23F0B00960BE2 /* AudioToolbox.framework */,
@@ -324,6 +329,7 @@
 				29C6829D14E4D6700052FC13 /* PeerWatcher.m in Sources */,
 				29C682A014E4F2840052FC13 /* PeerViewController.m in Sources */,
 				29C682A314E4F41D0052FC13 /* Peer.m in Sources */,
+				29445BB014E659A4000BE425 /* TrackViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

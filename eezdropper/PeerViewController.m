@@ -1,24 +1,30 @@
 #import "PeerViewController.h"
 #import "Peer.h"
 #import "Track.h"
+#import "PlayerController.h"
 
 @interface PeerViewController ()
+@property (nonatomic, retain) PlayerController *playerController;
 @property (nonatomic, retain) NSMutableArray *peers;
 @end
 
 @implementation PeerViewController
 
-@synthesize peers;
+@synthesize 
+peers = peers_,
+playerController = playerController_;
 
-- (id)init {
+- (id)initWithPlayerController:(PlayerController *)playerController {
     if (self = [super init]) {
+        self.playerController = playerController;
         self.peers = [NSMutableArray array];
     }
-    return self;
+    return self;    
 }
 
 - (void)dealloc {
-    [peers release];
+    [peers_ release];
+    [playerController_ release];
     [super dealloc];
 }
 
@@ -63,6 +69,11 @@
     }
 
     [self.tableView reloadData];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Peer *peer = [self.peers objectAtIndex:indexPath.row];
+    [self.playerController playTrack:peer.track];    
 }
 
 @end

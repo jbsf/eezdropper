@@ -2,16 +2,15 @@
 #import "Rdio/Rdio.h"
 
 @protocol PlayerDelegate;
+@class Track;
 
-@interface PlayerController : UITableViewController<RdioDelegate,RDPlayerDelegate,RDAPIRequestDelegate> 
+@interface PlayerController : UITableViewController<RdioDelegate,RDPlayerDelegate> 
 
 @property (nonatomic, retain) RDPlayer *player;
 @property (nonatomic, retain) Rdio *rdio;
 @property (nonatomic, assign) id<PlayerDelegate> playerDelegate;
-@property (nonatomic, retain) NSArray *tracks;
 
 + (PlayerController *)controller;
 
-- (void)loadTracks;
-
+- (void)playTrack:(Track *)track;
 @end

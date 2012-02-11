@@ -2,6 +2,7 @@
 #import <GameKit/GameKit.h>
 #import "PeerWatcher.h"
 #import "PeerViewController.h"
+#import "TrackViewController.h"
 
 @implementation AppDelegate
 
@@ -15,10 +16,12 @@
     Rdio *rdio = [[Rdio alloc] initWithConsumerKey:@"deanv9w6s66jg45ghzeaxu6z" andSecret:@"Qz2AWKDcSM" delegate:playerController];
     [playerController setRdio:rdio];
     [playerController setPlayer:rdio.player];
-    [playerController loadTracks];
+    
+    TrackViewController *trackViewController = [[[TrackViewController alloc] initWithRdio:rdio playerController:playerController] autorelease];
+    [trackViewController loadTracks];
 
-    PeerViewController *peerViewController = [[PeerViewController alloc] init];
-    NSArray *controllers = [NSArray arrayWithObjects:playerController, peerViewController, nil];
+    PeerViewController *peerViewController = [[PeerViewController alloc] initWithPlayerController:playerController];
+    NSArray *controllers = [NSArray arrayWithObjects:trackViewController, peerViewController, nil];
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     tabBarController.viewControllers = controllers;
