@@ -32,20 +32,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		29445B3A14E639A6000BE425 /* Domain Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Domain Specs-Info.plist"; sourceTree = "<group>"; };
-		29445B3C14E639A6000BE425 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		29445B3E14E639A6000BE425 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		29445B4014E639A6000BE425 /* Domain Specs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Domain Specs-Prefix.pch"; sourceTree = "<group>"; };
-		29445B4114E639A6000BE425 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		29445B4214E639A6000BE425 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		29445B4D14E63A57000BE425 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		29445B5A14E63ABF000BE425 /* UI Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UI Specs-Info.plist"; sourceTree = "<group>"; };
-		29445B5C14E63ABF000BE425 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		29445B5E14E63ABF000BE425 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		29445B6014E63ABF000BE425 /* UI Specs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UI Specs-Prefix.pch"; sourceTree = "<group>"; };
-		29445B6114E63ABF000BE425 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		29445B6214E63ABF000BE425 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		29445B6D14E63B3D000BE425 /* FooSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FooSpec.m; sourceTree = "<group>"; };
 		29445BA814E63E4E000BE425 /* PlayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerDelegate.h; sourceTree = "<group>"; };
 		29445BAB14E6569F000BE425 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		29445BAE14E659A4000BE425 /* TrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackViewController.h; sourceTree = "<group>"; };
@@ -103,65 +89,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2944591414E63785000BE425 /* Specs */ = {
-			isa = PBXGroup;
-			children = (
-				29445B6C14E63B2B000BE425 /* UI */,
-				29445B4D14E63A57000BE425 /* main.m */,
-			);
-			name = Specs;
-			sourceTree = "<group>";
-		};
-		29445B3814E639A6000BE425 /* Domain Specs */ = {
-			isa = PBXGroup;
-			children = (
-				29445B4114E639A6000BE425 /* AppDelegate.h */,
-				29445B4214E639A6000BE425 /* AppDelegate.m */,
-				29445B3914E639A6000BE425 /* Supporting Files */,
-			);
-			path = "Domain Specs";
-			sourceTree = "<group>";
-		};
-		29445B3914E639A6000BE425 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				29445B3A14E639A6000BE425 /* Domain Specs-Info.plist */,
-				29445B3B14E639A6000BE425 /* InfoPlist.strings */,
-				29445B3E14E639A6000BE425 /* main.m */,
-				29445B4014E639A6000BE425 /* Domain Specs-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		29445B5814E63ABF000BE425 /* UI Specs */ = {
-			isa = PBXGroup;
-			children = (
-				29445B6114E63ABF000BE425 /* AppDelegate.h */,
-				29445B6214E63ABF000BE425 /* AppDelegate.m */,
-				29445B5914E63ABF000BE425 /* Supporting Files */,
-			);
-			path = "UI Specs";
-			sourceTree = "<group>";
-		};
-		29445B5914E63ABF000BE425 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				29445B5A14E63ABF000BE425 /* UI Specs-Info.plist */,
-				29445B5B14E63ABF000BE425 /* InfoPlist.strings */,
-				29445B5E14E63ABF000BE425 /* main.m */,
-				29445B6014E63ABF000BE425 /* UI Specs-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		29445B6C14E63B2B000BE425 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				29445B6D14E63B3D000BE425 /* FooSpec.m */,
-			);
-			name = UI;
-			sourceTree = "<group>";
-		};
 		295067EA14E2408700960BE2 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,9 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				29DDA44B14E22C850001B7EF /* App */,
-				2944591414E63785000BE425 /* Specs */,
-				29445B3814E639A6000BE425 /* Domain Specs */,
-				29445B5814E63ABF000BE425 /* UI Specs */,
 				29DDA44414E22C850001B7EF /* Frameworks */,
 				29DDA44214E22C850001B7EF /* Products */,
 			);
@@ -344,22 +268,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		29445B3B14E639A6000BE425 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				29445B3C14E639A6000BE425 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		29445B5B14E63ABF000BE425 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				29445B5C14E63ABF000BE425 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		29DDA44E14E22C850001B7EF /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
