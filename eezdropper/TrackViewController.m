@@ -7,6 +7,7 @@
 @property (nonatomic, retain) Rdio *rdio;
 @property (nonatomic, retain) NSArray *tracks;
 @property (nonatomic, retain) PlayerController *playerController;
+@property (nonatomic, retain) NSMutableDictionary *imageCache;
 @end
 
 @implementation TrackViewController
@@ -15,6 +16,7 @@
 rdio = rdio_,
 tracks = tracks_,
 playerController = playerController_,
+imageCache = imageCache_,
 contentView = contentView_,
 tableViewCell = tableViewCell_;
 
@@ -22,21 +24,23 @@ tableViewCell = tableViewCell_;
     if (self = [super init]) {
         self.rdio = rdio;
         self.playerController = playerController;
+        self.imageCache = [NSMutableDictionary dictionary];
     }
     return self;
 }
 
 - (void)dealloc {
-    [playerController_ release];
-    [rdio_ release];
-    [tracks_ release];
+    self.playerController = nil;
+    self.rdio = nil;
+    self.tracks = nil;
+    self.imageCache = nil;
     [super dealloc];
 }
 
 - (void)loadTracks {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:@"Track" forKey:@"type"];
-    [self.rdio callAPIMethod:@"getTopCharts" withParameters:params delegate:self];
+    [self.rdio callAPIMethod:@"getTracksInCollection" withParameters:params delegate:self];
 }
 
 - (void)viewDidLoad {
@@ -102,7 +106,7 @@ tableViewCell = tableViewCell_;
 	AsyncImageView* asyncImage = [[[AsyncImageView alloc] initWithFrame:frame] autorelease];
     
 	asyncImage.tag = 999;
-	[asyncImage loadImageFromURL:[NSURL URLWithString:track.iconURL]];
+	[asyncImage loadImageFromURL:[NSURL URLWithString:track.iconURL] withCache:self.imageCache];
     
 	[realContentView addSubview:asyncImage];
 

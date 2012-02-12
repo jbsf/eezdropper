@@ -15,7 +15,15 @@
 // while the image is downloading. It works fine in a UITableView or other cases where there
 // are multiple images being downloaded and displayed all at the same time. 
 
+@interface AsyncImageView ()
+@property (nonatomic, assign) NSMutableDictionary *cache;
+@property (nonatomic, assign) NSURL *url;
+- (void)showImage:(UIImage *)image;
+@end
+
 @implementation AsyncImageView
+
+@synthesize cache = cache_, url = url_;
 
 - (void)dealloc {
 	[connection cancel]; //in case the URL is still downloading
@@ -25,7 +33,14 @@
 }
 
 
-- (void)loadImageFromURL:(NSURL*)url {
+- (void)loadImageFromURL:(NSURL*)url withCache:(NSMutableDictionary *) cache {
+    self.cache = cache;
+    self.url = url;
+    UIImage *image = [cache objectForKey:[url absoluteString]];
+    if (image) {
+        [self showImage:image];
+        return;
+    }
 	if (connection!=nil) { [connection release]; } //in case we are downloading a 2nd image
 	if (data!=nil) { [data release]; }
 	
@@ -52,14 +67,10 @@
 	}
 	
 	//make an image view for the image
-	UIImageView* imageView = [[[UIImageView alloc] initWithImage:[UIImage imageWithData:data]] autorelease];
-	//make sizing choices based on your needs, experiment with these. maybe not all the calls below are needed.
-	imageView.contentMode = UIViewContentModeScaleAspectFit;
-	imageView.autoresizingMask = ( UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight );
-	[self addSubview:imageView];
-	imageView.frame = self.bounds;
-	[imageView setNeedsLayout];
-	[self setNeedsLayout];
+    UIImage *image = [UIImage imageWithData:data];
+    [self showImage:image];
+    
+    [self.cache setValue:image forKey:[self.url absoluteString]];
 
 	[data release]; //don't need this any more, its in the UIImageView now
 	data=nil;
@@ -69,6 +80,18 @@
 - (UIImage*) image {
 	UIImageView* iv = [[self subviews] objectAtIndex:0];
 	return [iv image];
+}
+
+- (void)showImage:(UIImage *)image {
+    UIImageView* imageView = [[[UIImageView alloc] initWithImage:image] autorelease];
+	//make sizing choices based on your needs, experiment with these. maybe not all the calls below are needed.
+	imageView.contentMode = UIViewContentModeScaleAspectFit;
+	imageView.autoresizingMask = ( UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight );
+
+    [self addSubview:imageView];
+	imageView.frame = self.bounds;
+	[imageView setNeedsLayout];
+	[self setNeedsLayout];
 }
 
 @end

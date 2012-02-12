@@ -1,5 +1,14 @@
 - tabs on top
-- syncing playback between peers
+- per-account playlists
+- show user names in peer view
+- track info in player controls
+- nav view of other's playlist
+
+- powered by rdio
+
+- create presentation
+- recruit assistants
+
 - caching thumbnails
 - xcode on MBA
 - delete history & bookmarks on MBA

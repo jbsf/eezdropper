@@ -7,6 +7,7 @@
 @interface PeerViewController ()
 @property (nonatomic, retain) PlayerController *playerController;
 @property (nonatomic, retain) NSMutableArray *peers;
+@property (nonatomic, retain) NSMutableDictionary *imageCache;
 
 - (void)shrinkLabel:(UILabel *)label;
 @end
@@ -17,19 +18,22 @@
 tableViewCell = tableViewCell_,
 contentView = contentView_,
 peers = peers_,
+imageCache = imageCache_,
 playerController = playerController_;
 
 - (id)initWithPlayerController:(PlayerController *)playerController {
     if (self = [super init]) {
         self.playerController = playerController;
         self.peers = [NSMutableArray array];
+        self.imageCache = [NSMutableDictionary dictionary];
     }
     return self;    
 }
 
 - (void)dealloc {
-    [peers_ release];
-    [playerController_ release];
+    self.peers = nil;
+    self.playerController = nil;
+    self.imageCache = nil;
     [super dealloc];
 }
 
@@ -76,13 +80,13 @@ playerController = playerController_;
     CGRect frame = CGRectMake(5, 4, 30, 30);
 	AsyncImageView* artistImage = [[[AsyncImageView alloc] initWithFrame:frame] autorelease];    
 	artistImage.tag = 999;
-	[artistImage loadImageFromURL:[NSURL URLWithString:peer.track.iconURL]];
+	[artistImage loadImageFromURL:[NSURL URLWithString:peer.track.iconURL] withCache:self.imageCache];
 	[realContentView addSubview:artistImage];
     
     frame = CGRectMake(285, 4, 30, 30);
 	AsyncImageView* peerImage = [[[AsyncImageView alloc] initWithFrame:frame] autorelease];    
 	peerImage.tag = 998;
-	[peerImage loadImageFromURL:[NSURL URLWithString:peer.iconURL]];
+	[peerImage loadImageFromURL:[NSURL URLWithString:peer.iconURL] withCache:self.imageCache];
 	[realContentView addSubview:peerImage];
     
     topLabel.text = peer.track.name;

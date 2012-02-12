@@ -4,7 +4,7 @@
 
 @class PeerWatcher;
 
-@interface AppDelegate : NSObject <UIApplicationDelegate>
+@interface AppDelegate : NSObject <UIApplicationDelegate, RdioDelegate>
 
 @property (nonatomic, retain) UIWindow *window;
 @property (nonatomic, retain) Rdio *rdio;

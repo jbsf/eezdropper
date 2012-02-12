@@ -10,6 +10,7 @@
 @interface AppDelegate ()
 
 @property (nonatomic, retain) PeerViewController *peerViewController;
+@property (nonatomic, retain) TrackViewController *trackViewController;
 @property (nonatomic, retain) PlayerController *playerController;
 
 - (void)showLoginController;
@@ -22,6 +23,7 @@
 window = window_, 
 rdio = rdio_,
 peerViewController = peerViewController_,
+trackViewController = trackViewController,
 playerController = playerController_,
 peerWatcher = peerWatcher_;
 
@@ -58,10 +60,8 @@ peerWatcher = peerWatcher_;
     self.playerController = [[[PlayerController alloc] initWithRdio:self.rdio player:self.rdio.player] autorelease];
     [self.rdio.player addObserver:self.playerController forKeyPath:@"position" options:NSKeyValueObservingOptionNew context:nil];
     self.rdio.player.delegate = self.playerController;    
-    self.rdio.delegate = self.playerController;
     
-    TrackViewController *trackViewController = [[[TrackViewController alloc] initWithRdio:self.rdio playerController:self.playerController] autorelease];
-    [trackViewController loadTracks];
+    self.trackViewController = [[[TrackViewController alloc] initWithRdio:self.rdio playerController:self.playerController] autorelease];
     
     self.peerViewController = [[PeerViewController alloc] initWithPlayerController:self.playerController];
     
@@ -69,12 +69,23 @@ peerWatcher = peerWatcher_;
     
     NavigationController *navController = [[[NavigationController alloc] initWithNibName:@"NavigationView" bundle:nil] autorelease]; 
     navController.peerController = self.peerViewController;
-    navController.trackController = trackViewController;
+    navController.trackController = self.trackViewController;
     [navController addPlayerControlView: self.playerController.playerControlView];
 
     self.window.rootViewController = navController;    
 
+    self.rdio.delegate = self;
     [self.rdio authorizeUsingAccessToken:accessToken fromController:navController];
+}
+
+- (void)rdioDidAuthorizeUser:(NSDictionary *)user withAccessToken:(NSString *)accessToken {
+    NSLog(@"AppDelegate did authorize user");
+    [self.trackViewController loadTracks];
+}
+
+
+- (void)rdioAuthorizationFailed:(NSString *)error {
+    NSLog(@"AppDelegate authorization failed with error: %@", error);
 }
 
 - (void)dealloc {

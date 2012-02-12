@@ -34,5 +34,4 @@ peerController = peerController_;
     [self.view addSubview:playerControlView];
 }
 
-
 @end

@@ -20,7 +20,7 @@
 	
 }
 
-- (void)loadImageFromURL:(NSURL*)url;
+- (void)loadImageFromURL:(NSURL*)url withCache:(NSMutableDictionary *) cache;
 - (UIImage*) image;
 
 @end
