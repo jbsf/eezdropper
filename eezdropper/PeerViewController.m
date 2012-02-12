@@ -57,7 +57,7 @@ playerController = playerController_;
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        [[NSBundle mainBundle] loadNibNamed:@"PeerView" owner:self options:nil];
+        [[NSBundle mainBundle] loadNibNamed:@"TrackView" owner:self options:nil];
         cell = self.tableViewCell;
         [cell.contentView addSubview:self.contentView];
         self.tableViewCell = nil;
@@ -77,13 +77,13 @@ playerController = playerController_;
     
     Peer *peer = [self.peers objectAtIndex:indexPath.row];
     
-    CGRect frame = CGRectMake(5, 5, 70, 70);
+    CGRect frame = CGRectMake(5, 4, 30, 30);
 	AsyncImageView* artistImage = [[[AsyncImageView alloc] initWithFrame:frame] autorelease];    
 	artistImage.tag = 999;
 	[artistImage loadImageFromURL:[NSURL URLWithString:peer.track.iconURL] withCache:self.imageCache];
 	[realContentView addSubview:artistImage];
     
-    frame = CGRectMake(235, 5, 70, 70);
+    frame = CGRectMake(285, 4, 30, 30);
 	AsyncImageView* peerImage = [[[AsyncImageView alloc] initWithFrame:frame] autorelease];    
 	peerImage.tag = 998;
 	[peerImage loadImageFromURL:[NSURL URLWithString:peer.iconURL] withCache:self.imageCache];
