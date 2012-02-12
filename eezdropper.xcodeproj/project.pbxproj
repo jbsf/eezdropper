@@ -21,6 +21,7 @@
 		294ABF7A14E7B871004CAA28 /* navButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 294ABF7914E7B871004CAA28 /* navButtonBackground.png */; };
 		294ABF7C14E7BE06004CAA28 /* navButtonSelectedBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 294ABF7B14E7BE06004CAA28 /* navButtonSelectedBackground.png */; };
 		294ABF7E14E83090004CAA28 /* PlayerControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 294ABF7D14E8308F004CAA28 /* PlayerControlView.xib */; };
+		294ABF8014E84820004CAA28 /* PeerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 294ABF7F14E84820004CAA28 /* PeerView.xib */; };
 		295067DB14E23EED00960BE2 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067D414E23E0800960BE2 /* GameKit.framework */; };
 		295067DC14E23EFC00960BE2 /* Rdio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067D914E23EC900960BE2 /* Rdio.framework */; };
 		295067E614E23F5A00960BE2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067E114E23F3B00960BE2 /* SystemConfiguration.framework */; };
@@ -60,6 +61,7 @@
 		294ABF7914E7B871004CAA28 /* navButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navButtonBackground.png; sourceTree = "<group>"; };
 		294ABF7B14E7BE06004CAA28 /* navButtonSelectedBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navButtonSelectedBackground.png; sourceTree = "<group>"; };
 		294ABF7D14E8308F004CAA28 /* PlayerControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PlayerControlView.xib; path = ../../../../../Users/jb/workspace/eezdropper/eezdropper/PlayerControlView.xib; sourceTree = "<group>"; };
+		294ABF7F14E84820004CAA28 /* PeerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PeerView.xib; path = ../../../../../Users/jb/workspace/eezdropper/eezdropper/PeerView.xib; sourceTree = "<group>"; };
 		295067D414E23E0800960BE2 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		295067D914E23EC900960BE2 /* Rdio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Rdio.framework; sourceTree = "<group>"; };
 		295067DD14E23F0B00960BE2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -174,6 +176,7 @@
 				290476A414E71C580012E6BE /* LoginView.xib */,
 				294ABF7014E7A5C7004CAA28 /* NavigationView.xib */,
 				294ABF7D14E8308F004CAA28 /* PlayerControlView.xib */,
+				294ABF7F14E84820004CAA28 /* PeerView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				294ABF7A14E7B871004CAA28 /* navButtonBackground.png in Resources */,
 				294ABF7C14E7BE06004CAA28 /* navButtonSelectedBackground.png in Resources */,
 				294ABF7E14E83090004CAA28 /* PlayerControlView.xib in Resources */,
+				294ABF8014E84820004CAA28 /* PeerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
