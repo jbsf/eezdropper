@@ -89,8 +89,13 @@ playerController = playerController_;
 	[peerImage loadImageFromURL:[NSURL URLWithString:peer.iconURL] withCache:self.imageCache];
 	[realContentView addSubview:peerImage];
     
-    topLabel.text = peer.track.name;
-    bottomLabel.text = peer.track.artist;
+    if (peer.track != nil) {
+        topLabel.text = peer.track.name;
+        bottomLabel.text = peer.track.artist;        
+    } else {
+        topLabel.text = peer.name;
+        bottomLabel.text = @"";
+    }
     
     return cell;
 }
@@ -126,7 +131,9 @@ playerController = playerController_;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Peer *peer = [self.peers objectAtIndex:indexPath.row];
-    [self.playerController playTrack:peer.track];    
+    if (peer.track != nil) {
+        [self.playerController playTrack:peer.track];        
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
