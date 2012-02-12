@@ -18,6 +18,8 @@
 		294ABF7314E7A8B5004CAA28 /* playButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 294ABF7214E7A8B5004CAA28 /* playButton.png */; };
 		294ABF7514E7A8C9004CAA28 /* pauseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 294ABF7414E7A8C9004CAA28 /* pauseButton.png */; };
 		294ABF7814E7AA3B004CAA28 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 294ABF7714E7AA3B004CAA28 /* NavigationController.m */; };
+		294ABF7A14E7B871004CAA28 /* navButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 294ABF7914E7B871004CAA28 /* navButtonBackground.png */; };
+		294ABF7C14E7BE06004CAA28 /* navButtonSelectedBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 294ABF7B14E7BE06004CAA28 /* navButtonSelectedBackground.png */; };
 		295067DB14E23EED00960BE2 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067D414E23E0800960BE2 /* GameKit.framework */; };
 		295067DC14E23EFC00960BE2 /* Rdio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067D914E23EC900960BE2 /* Rdio.framework */; };
 		295067E614E23F5A00960BE2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067E114E23F3B00960BE2 /* SystemConfiguration.framework */; };
@@ -55,6 +57,8 @@
 		294ABF7414E7A8C9004CAA28 /* pauseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseButton.png; sourceTree = "<group>"; };
 		294ABF7614E7AA3B004CAA28 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavigationController.h; path = ../../../../../Users/jb/workspace/eezdropper/eezdropper/NavigationController.h; sourceTree = "<group>"; };
 		294ABF7714E7AA3B004CAA28 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavigationController.m; path = ../../../../../Users/jb/workspace/eezdropper/eezdropper/NavigationController.m; sourceTree = "<group>"; };
+		294ABF7914E7B871004CAA28 /* navButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navButtonBackground.png; sourceTree = "<group>"; };
+		294ABF7B14E7BE06004CAA28 /* navButtonSelectedBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navButtonSelectedBackground.png; sourceTree = "<group>"; };
 		295067D414E23E0800960BE2 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		295067D914E23EC900960BE2 /* Rdio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Rdio.framework; sourceTree = "<group>"; };
 		295067DD14E23F0B00960BE2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -157,6 +161,8 @@
 		29C6828214E25A900052FC13 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				294ABF7914E7B871004CAA28 /* navButtonBackground.png */,
+				294ABF7B14E7BE06004CAA28 /* navButtonSelectedBackground.png */,
 				294ABF7414E7A8C9004CAA28 /* pauseButton.png */,
 				294ABF7214E7A8B5004CAA28 /* playButton.png */,
 				294ABF6E14E79BD2004CAA28 /* trackViewSelectedBackground.png */,
@@ -294,6 +300,8 @@
 				294ABF7114E7A5C8004CAA28 /* NavigationView.xib in Resources */,
 				294ABF7314E7A8B5004CAA28 /* playButton.png in Resources */,
 				294ABF7514E7A8C9004CAA28 /* pauseButton.png in Resources */,
+				294ABF7A14E7B871004CAA28 /* navButtonBackground.png in Resources */,
+				294ABF7C14E7BE06004CAA28 /* navButtonSelectedBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

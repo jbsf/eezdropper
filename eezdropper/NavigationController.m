@@ -21,6 +21,20 @@ peerController = peerController_;
     self.peerController.view.frame = CGRectMake(0, 30, 320, 410);
     self.trackController.view.frame = CGRectMake(0, 30, 320, 390);
     self.playerControlView.frame = CGRectMake(0, 420, 320, 40);
+    UIEdgeInsets capInsets;
+    capInsets.right = 10;
+    capInsets.top = 5;
+    capInsets.bottom = 5;
+    UIImage *image = [[UIImage imageNamed:@"navButtonBackground.png"] resizableImageWithCapInsets:capInsets];
+    [self.nearbyButton setBackgroundImage:image forState:UIControlStateNormal];
+    image = [[UIImage imageNamed:@"navButtonSelectedBackground.png"] resizableImageWithCapInsets:capInsets];
+    [self.nearbyButton setBackgroundImage:image forState:UIControlStateHighlighted];
+    capInsets.right = 0;
+    capInsets.left = 10;
+    image = [[UIImage imageNamed:@"navButtonBackground.png"] resizableImageWithCapInsets:capInsets];
+    [self.songButton setBackgroundImage:image forState:UIControlStateNormal];
+    image = [[UIImage imageNamed:@"navButtonSelectedBackground.png"] resizableImageWithCapInsets:capInsets];
+    [self.songButton setBackgroundImage:image forState:UIControlStateHighlighted];
 }
 
 - (IBAction)didTapSongButton {
