@@ -1,5 +1,6 @@
 - tabs on top
-- player controls
 - syncing playback between peers
 - caching thumbnails
+- xcode on MBA
+- delete history & bookmarks on MBA
 - better playlist

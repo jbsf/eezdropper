@@ -174,10 +174,6 @@ peerNames = peerNames_;
 - (void)updatePeers {    
     NSData *data = [self.localPeer serialize];
     NSError *error = nil;
-    
-//    Peer *peer = [Peer deserialize:data];
-//    NSLog(@"deserialized peer: %@", peer);
-//    NSLog(@"  equals: %d", [peer isEqual:self.localPeer]);
 
     NSLog(@"%@ %@ updating peers with data", self.session.peerID, self.displayName);
 

@@ -2,35 +2,29 @@
 #import "Track.h"
 #import "PlayerDelegate.h"
 
-@interface PlayerController ()
-@property (nonatomic, assign) BOOL loggedIn;
-@property (nonatomic, assign) BOOL playing;
-@property (nonatomic, assign) BOOL paused;
-@end
-
 @implementation PlayerController
 
 @synthesize 
+playButton = playButton_,
+pauseButton = pauseButton_,
 player = player_, 
 rdio = rdio_, 
-loggedIn = loggedIn_, 
-playing = playing_, 
-paused = paused_,
+playerControlView = playerControlView_,
 progressView = progressView_,
 playerDelegate = playerDelegate_;
-
 
 - (id)initWithRdio:(Rdio *)rdio player:(RDPlayer *)player {
     if (self = [super init]) {
         self.rdio = rdio;
         self.player = player;
+        [[NSBundle mainBundle] loadNibNamed:@"PlayerControlView" owner:self options:nil];
     }
     return self;
 }
 
 - (void)dealloc {
-    [player_ release];
-    [rdio_ release];
+    self.player = nil;
+    self.rdio = nil;
     [super dealloc];
 }
 
@@ -40,35 +34,33 @@ playerDelegate = playerDelegate_;
     [self.player playSource:track.key];
 }
 
-#pragma mark IBActions
-
-- (IBAction) playClicked:(id) button {
-    if (!self.playing) {
-        NSArray* keys = [@"t2742133,t1992210,t7418766,t8816323" componentsSeparatedByString:@","];
-        [self.player playSources:keys];
-    } else {
-        [self.player togglePause];
-    }
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    NSLog(@"value observed, change = %@", change);
+    NSString *newString = [change objectForKey:@"new"];
+    float new = [newString floatValue];
+    [self.progressView setProgress:(new/self.player.duration) animated:YES];
 }
 
-- (IBAction) loginClicked:(id) button {
-    if (self.loggedIn) {
-        [self.rdio logout];
-    } else {
-        [self.rdio authorizeFromController:self];
-    }
-}
-
-#pragma mark -
-#pragma mark RDPlayerDelegate
-
-- (BOOL) rdioIsPlayingElsewhere {
+- (BOOL)rdioIsPlayingElsewhere {
     return NO;
 }
 
-- (void) rdioPlayerChangedFromState:(RDPlayerState)fromState toState:(RDPlayerState)state {
-    self.playing = (state != RDPlayerStateInitializing && state != RDPlayerStateStopped);
-    self.paused = (state == RDPlayerStatePaused);
+-(void)rdioPlayerChangedFromState:(RDPlayerState)oldState toState:(RDPlayerState)newState {
+    if (newState == RDPlayerStatePlaying) {
+        self.playButton.hidden = YES;
+        self.pauseButton.hidden = NO;
+    } else {
+        self.playButton.hidden = NO;
+        self.pauseButton.hidden = YES;
+    }
+}
+
+- (void)didTapPlayButton {
+    [self.player togglePause];
+}
+
+- (void)didTapPauseButton {
+    [self.player togglePause];
 }
 
 @end
