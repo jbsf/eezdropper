@@ -5,6 +5,7 @@
 #import "TrackViewController.h"
 #import "LoginViewController.h"
 #import "Peer.h"
+#import "NavigationController.h"
 
 @interface AppDelegate ()
 
@@ -64,16 +65,16 @@ peerWatcher = peerWatcher_;
     [trackViewController loadTracks];
     
     self.peerViewController = [[PeerViewController alloc] initWithPlayerController:self.playerController];
-    NSArray *controllers = [NSArray arrayWithObjects:self.peerViewController, trackViewController, nil];
-    
-    UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    tabBarController.viewControllers = controllers;
     
     [self initializePeerWatcher];
     
-    self.window.rootViewController = tabBarController;    
+    NavigationController *navController = [[[NavigationController alloc] initWithNibName:@"NavigationView" bundle:nil] autorelease]; 
+    navController.peerController = self.peerViewController;
+    navController.trackController = trackViewController;
+    
+    self.window.rootViewController = navController;    
 
-    [self.rdio authorizeUsingAccessToken:accessToken fromController:tabBarController];
+    [self.rdio authorizeUsingAccessToken:accessToken fromController:navController];
 }
 
 - (void)dealloc {

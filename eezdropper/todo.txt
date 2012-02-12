@@ -1,10 +1,5 @@
-X connection stability
-- rdio accounts
-- peer table cell styling
-- syncing playback between peers
 - tabs on top
 - player controls
-- deploy to other devices
+- syncing playback between peers
 - caching thumbnails
-X backgrounding
 - better playlist
