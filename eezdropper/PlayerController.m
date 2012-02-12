@@ -16,10 +16,16 @@ rdio = rdio_,
 loggedIn = loggedIn_, 
 playing = playing_, 
 paused = paused_,
+progressView = progressView_,
 playerDelegate = playerDelegate_;
 
-+ (PlayerController *)controller {
-    return [[[PlayerController alloc] init] autorelease];
+
+- (id)initWithRdio:(Rdio *)rdio player:(RDPlayer *)player {
+    if (self = [super init]) {
+        self.rdio = rdio;
+        self.player = player;
+    }
+    return self;
 }
 
 - (void)dealloc {

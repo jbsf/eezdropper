@@ -9,8 +9,9 @@
 @property (nonatomic, retain) RDPlayer *player;
 @property (nonatomic, retain) Rdio *rdio;
 @property (nonatomic, assign) id<PlayerDelegate> playerDelegate;
+@property (nonatomic, assign) UIProgressView *progressView;
 
-+ (PlayerController *)controller;
+- (id)initWithRdio:(Rdio *)rdio player:(RDPlayer *)player;
 
 - (void)playTrack:(Track *)track;
 @end

@@ -55,9 +55,7 @@ peerWatcher = peerWatcher_;
 }
 
 - (void)showApp:(NSString *)accessToken {
-    self.playerController = [PlayerController controller];
-    [self.playerController setRdio:self.rdio];
-    [self.playerController setPlayer:self.rdio.player];
+    self.playerController = [[[PlayerController alloc] initWithRdio:self.rdio player:self.rdio.player] autorelease];
     
     self.rdio.delegate = self.playerController;
     
@@ -71,7 +69,11 @@ peerWatcher = peerWatcher_;
     NavigationController *navController = [[[NavigationController alloc] initWithNibName:@"NavigationView" bundle:nil] autorelease]; 
     navController.peerController = self.peerViewController;
     navController.trackController = trackViewController;
+    navController.player = self.rdio.player;
     
+    [self.rdio.player addObserver:navController forKeyPath:@"position" options:NSKeyValueObservingOptionNew context:nil];
+    self.rdio.player.delegate = navController;
+
     self.window.rootViewController = navController;    
 
     [self.rdio authorizeUsingAccessToken:accessToken fromController:navController];
