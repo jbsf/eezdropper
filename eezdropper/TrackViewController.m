@@ -39,6 +39,11 @@ tableViewCell = tableViewCell_;
     [self.rdio callAPIMethod:@"getTopCharts" withParameters:params delegate:self];
 }
 
+- (void)viewDidLoad {
+    self.tableView.backgroundColor = [UIColor colorWithRed:163/255.0 green:179/255.0 blue:193/255.0 alpha:1.0];
+    self.tableView.separatorColor = [UIColor colorWithRed:163/255.0 green:179/255.0 blue:193/255.0 alpha:1.0];
+}
+
 #pragma mark RDAPIRequestDelegate 
 
 /**

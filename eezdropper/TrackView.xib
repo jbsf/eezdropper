@@ -55,6 +55,19 @@
 									<string key="NSResourceName">trackViewBackground.png</string>
 								</object>
 							</object>
+							<object class="IBUIImageView" id="910469554">
+								<reference key="NSNextResponder" ref="489587626"/>
+								<int key="NSvFlags">292</int>
+								<string key="NSFrameSize">{320, 35}</string>
+								<reference key="NSSuperview" ref="489587626"/>
+								<reference key="NSWindow"/>
+								<bool key="IBUIUserInteractionEnabled">NO</bool>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<object class="NSCustomResource" key="IBUIImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">trackViewSelectedBackground.png</string>
+								</object>
+							</object>
 						</array>
 						<string key="NSFrameSize">{320, 34}</string>
 						<reference key="NSSuperview" ref="220578084"/>
@@ -124,6 +137,7 @@
 						<string key="NSFrame">{{40, 17}, {258, 21}}</string>
 						<reference key="NSSuperview" ref="515857731"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -191,6 +205,14 @@
 					</object>
 					<int key="connectionID">5</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">selectedBackgroundView</string>
+						<reference key="source" ref="220578084"/>
+						<reference key="destination" ref="910469554"/>
+					</object>
+					<int key="connectionID">15</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -216,6 +238,7 @@
 						<reference key="object" ref="220578084"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="195680533"/>
+							<reference ref="910469554"/>
 						</array>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">tableViewCell</string>
@@ -248,6 +271,12 @@
 						<reference key="parent" ref="515857731"/>
 						<string key="objectName">bottomLabel</string>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">14</int>
+						<reference key="object" ref="910469554"/>
+						<reference key="parent" ref="220578084"/>
+						<string key="objectName">selectedBackgroundView</string>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -257,6 +286,7 @@
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="10.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="12.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="14.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="3.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -265,7 +295,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">12</int>
+			<int key="maxID">15</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -297,10 +327,10 @@
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">trackViewBackground.png</string>
-			<string key="NS.object.0">{29, 35}</string>
-		</object>
+		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="trackViewBackground.png">{29, 35}</string>
+			<string key="trackViewSelectedBackground.png">{30, 35}</string>
+		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">931</string>
 	</data>
 </archive>

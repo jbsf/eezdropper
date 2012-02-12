@@ -1,4 +1,4 @@
-- connection stability
+X connection stability
 - rdio accounts
 - peer table cell styling
 - syncing playback between peers
@@ -6,5 +6,5 @@
 - player controls
 - deploy to other devices
 - caching thumbnails
-- backgrounding
+X backgrounding
 - better playlist

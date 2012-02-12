@@ -13,6 +13,7 @@
 		29445BB014E659A4000BE425 /* TrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29445BAF14E659A4000BE425 /* TrackViewController.m */; };
 		29445BB214E669A6000BE425 /* TrackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29445BB114E669A6000BE425 /* TrackView.xib */; };
 		29445BB614E67677000BE425 /* trackViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 29445BB514E67677000BE425 /* trackViewBackground.png */; };
+		294ABF6F14E79BD2004CAA28 /* trackViewSelectedBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 294ABF6E14E79BD2004CAA28 /* trackViewSelectedBackground.png */; };
 		295067DB14E23EED00960BE2 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067D414E23E0800960BE2 /* GameKit.framework */; };
 		295067DC14E23EFC00960BE2 /* Rdio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067D914E23EC900960BE2 /* Rdio.framework */; };
 		295067E614E23F5A00960BE2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067E114E23F3B00960BE2 /* SystemConfiguration.framework */; };
@@ -44,6 +45,7 @@
 		29445BAF14E659A4000BE425 /* TrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackViewController.m; sourceTree = "<group>"; };
 		29445BB114E669A6000BE425 /* TrackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrackView.xib; sourceTree = "<group>"; };
 		29445BB514E67677000BE425 /* trackViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trackViewBackground.png; sourceTree = "<group>"; };
+		294ABF6E14E79BD2004CAA28 /* trackViewSelectedBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trackViewSelectedBackground.png; sourceTree = "<group>"; };
 		295067D414E23E0800960BE2 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		295067D914E23EC900960BE2 /* Rdio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Rdio.framework; sourceTree = "<group>"; };
 		295067DD14E23F0B00960BE2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -144,6 +146,7 @@
 		29C6828214E25A900052FC13 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				294ABF6E14E79BD2004CAA28 /* trackViewSelectedBackground.png */,
 				29445BB514E67677000BE425 /* trackViewBackground.png */,
 				29C6828414E25EA30052FC13 /* eezdropper-Prefix.pch */,
 				29DDA44D14E22C850001B7EF /* eezdropper-Info.plist */,
@@ -273,6 +276,7 @@
 				29445BB214E669A6000BE425 /* TrackView.xib in Resources */,
 				29445BB614E67677000BE425 /* trackViewBackground.png in Resources */,
 				290476A514E71C580012E6BE /* LoginView.xib in Resources */,
+				294ABF6F14E79BD2004CAA28 /* trackViewSelectedBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

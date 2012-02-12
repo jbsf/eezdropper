@@ -2,15 +2,20 @@
 #import "Peer.h"
 #import "Track.h"
 #import "PlayerController.h"
+#import "AsyncImageView.h"
 
 @interface PeerViewController ()
 @property (nonatomic, retain) PlayerController *playerController;
 @property (nonatomic, retain) NSMutableArray *peers;
+
+- (void)shrinkLabel:(UILabel *)label;
 @end
 
 @implementation PeerViewController
 
-@synthesize 
+@synthesize
+tableViewCell = tableViewCell_,
+contentView = contentView_,
 peers = peers_,
 playerController = playerController_;
 
@@ -28,6 +33,11 @@ playerController = playerController_;
     [super dealloc];
 }
 
+- (void)viewDidLoad {
+    self.tableView.backgroundColor = [UIColor colorWithRed:163/255.0 green:179/255.0 blue:193/255.0 alpha:1.0];
+    self.tableView.separatorColor = [UIColor colorWithRed:163/255.0 green:179/255.0 blue:193/255.0 alpha:1.0];
+}
+
 #pragma mark UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -42,15 +52,48 @@ playerController = playerController_;
     static NSString *CellIdentifier = @"PeerCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (!cell) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    if (cell == nil) {
+        [[NSBundle mainBundle] loadNibNamed:@"TrackView" owner:self options:nil];
+        cell = self.tableViewCell;
+        [cell.contentView addSubview:self.contentView];
+        self.tableViewCell = nil;
+        self.contentView = nil;
+    } else {
+        AsyncImageView* oldArtistImage = (AsyncImageView*) [cell.contentView viewWithTag:999];
+        [oldArtistImage removeFromSuperview];
+        AsyncImageView* oldPeerImage = (AsyncImageView*) [cell.contentView viewWithTag:998];
+        [oldPeerImage removeFromSuperview];
     }
     
+    UIView *realContentView = [cell.contentView.subviews lastObject];
+    UILabel *topLabel    = (UILabel *)[realContentView viewWithTag:1];
+    UILabel *bottomLabel = (UILabel *)[realContentView viewWithTag:2];
+    [self shrinkLabel:topLabel];
+    [self shrinkLabel:bottomLabel];
+    
     Peer *peer = [self.peers objectAtIndex:indexPath.row];
-    NSString *trackName = peer.track ? [NSString stringWithFormat:@" - %@", peer.track.name] : @"";
-    cell.textLabel.text = [NSString stringWithFormat:@"%@%@", peer.name, trackName];
+    
+    CGRect frame = CGRectMake(5, 4, 30, 30);
+	AsyncImageView* artistImage = [[[AsyncImageView alloc] initWithFrame:frame] autorelease];    
+	artistImage.tag = 999;
+	[artistImage loadImageFromURL:[NSURL URLWithString:peer.track.iconURL]];
+	[realContentView addSubview:artistImage];
+    
+    frame = CGRectMake(285, 4, 30, 30);
+	AsyncImageView* peerImage = [[[AsyncImageView alloc] initWithFrame:frame] autorelease];    
+	peerImage.tag = 998;
+	[peerImage loadImageFromURL:[NSURL URLWithString:peer.iconURL]];
+	[realContentView addSubview:peerImage];
+    
+    topLabel.text = peer.track.name;
+    bottomLabel.text = peer.track.artist;
     
     return cell;
+}
+
+- (void)shrinkLabel:(UILabel *)label {
+    CGRect frame = label.frame;
+    label.frame = CGRectMake(frame.origin.x, frame.origin.y, 240, frame.size.height);
 }
 
 #pragma mark PeerWatcherDelegage 
@@ -79,7 +122,11 @@ playerController = playerController_;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Peer *peer = [self.peers objectAtIndex:indexPath.row];
-//    [self.playerController playTrack:peer.track];    
+    [self.playerController playTrack:peer.track];    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 40;
 }
 
 @end
