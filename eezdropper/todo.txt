@@ -1,9 +1,10 @@
-- log in to rdio
+- connection stability
+- rdio accounts
 - peer table cell styling
 - syncing playback between peers
-- connection stability
 - tabs on top
 - player controls
 - deploy to other devices
 - caching thumbnails
+- backgrounding
 - better playlist

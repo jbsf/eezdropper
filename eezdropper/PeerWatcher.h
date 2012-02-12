@@ -8,5 +8,6 @@
 @interface PeerWatcher : NSObject<GKSessionDelegate, PlayerDelegate>
 
 - (id)initWithLocalPeer:(Peer *)localPeer delegate:(id<PeerWatcherDelegate>)delegate;
+- (void)disconnect;
 
 @end

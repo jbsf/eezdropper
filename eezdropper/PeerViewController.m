@@ -60,6 +60,12 @@ playerController = playerController_;
     [self.tableView reloadData];
 }
 
+- (void)allPeersDidLeave {
+    NSLog(@"allPeersDidLeave; removing all objects");
+    [self.peers removeAllObjects];
+    [self.tableView reloadData];
+}
+
 - (void)peerDidArrive:(Peer *)peer {
     NSUInteger index = [self.peers indexOfObject:peer];
     if (index == NSNotFound) {
@@ -73,7 +79,7 @@ playerController = playerController_;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Peer *peer = [self.peers objectAtIndex:indexPath.row];
-    [self.playerController playTrack:peer.track];    
+//    [self.playerController playTrack:peer.track];    
 }
 
 @end
