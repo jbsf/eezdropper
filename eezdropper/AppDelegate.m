@@ -1,11 +1,12 @@
 #import "AppDelegate.h"
 #import <GameKit/GameKit.h>
+#import <Objection-iOS/Objection.h>
 #import "PeerWatcher.h"
 #import "PeerViewController.h"
 #import "TrackViewController.h"
 #import "LoginViewController.h"
 #import "Peer.h"
-#import "NavigationController.h"
+#import "MainController.h"
 
 @interface AppDelegate ()
 
@@ -67,19 +68,21 @@ peerWatcher = peerWatcher_;
     
     [self initializePeerWatcher];
     
-    NavigationController *navController = [[[NavigationController alloc] initWithNibName:@"NavigationView" bundle:nil] autorelease]; 
-    navController.peerController = self.peerViewController;
-    navController.trackController = self.trackViewController;
-    [navController addPlayerControlView: self.playerController.playerControlView];
+    MainController *mainController = [[[MainController alloc] initWithNibName:@"MainView" bundle:nil] autorelease]; 
+    mainController.peerController = self.peerViewController;
+    mainController.trackController = self.trackViewController;
+    self.peerViewController.mainController = mainController;
+    [mainController addPlayerControlView: self.playerController.playerControlView];
 
-    self.window.rootViewController = navController;    
+    self.window.rootViewController = mainController;    
 
     self.rdio.delegate = self;
-    [self.rdio authorizeUsingAccessToken:accessToken fromController:navController];
+    [self.rdio authorizeUsingAccessToken:accessToken fromController:mainController];
 }
 
 - (void)rdioDidAuthorizeUser:(NSDictionary *)user withAccessToken:(NSString *)accessToken {
     NSLog(@"AppDelegate did authorize user");
+     self.trackViewController.userKey = [user objectForKey:@"key"];
     [self.trackViewController loadTracks];
 }
 
@@ -120,7 +123,7 @@ peerWatcher = peerWatcher_;
 
 - (void)destroyPeerWatcher {
     NSLog(@"destroying peer watcher, but not really");
-    return;
+//    return;
     PeerWatcher *watcher;
     @synchronized(self) {
         watcher = self.peerWatcher;

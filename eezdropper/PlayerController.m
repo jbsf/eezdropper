@@ -2,6 +2,10 @@
 #import "Track.h"
 #import "PlayerDelegate.h"
 
+@interface PlayerController ()
+@property (nonatomic, retain) Track *currentTrack;
+@end
+
 @implementation PlayerController
 
 @synthesize 
@@ -11,6 +15,7 @@ player = player_,
 rdio = rdio_, 
 playerControlView = playerControlView_,
 progressView = progressView_,
+currentTrack = currentTrack_,
 playerDelegate = playerDelegate_;
 
 - (id)initWithRdio:(Rdio *)rdio player:(RDPlayer *)player {
@@ -25,11 +30,12 @@ playerDelegate = playerDelegate_;
 - (void)dealloc {
     self.player = nil;
     self.rdio = nil;
+    self.currentTrack = nil;
     [super dealloc];
 }
 
 - (void)playTrack:(Track *)track {
-    [self.playerDelegate playerDidStart:track];
+    self.currentTrack = track;
     NSLog(@"playing track with key: %@", track.key);
     [self.player playSource:track.key];
 }
@@ -49,9 +55,11 @@ playerDelegate = playerDelegate_;
     if (newState == RDPlayerStatePlaying) {
         self.playButton.hidden = YES;
         self.pauseButton.hidden = NO;
+        [self.playerDelegate playerDidStart:self.currentTrack];
     } else {
         self.playButton.hidden = NO;
         self.pauseButton.hidden = YES;
+        [self.playerDelegate playerDidPause];
     }
 }
 

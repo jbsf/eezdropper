@@ -18,6 +18,7 @@ tracks = tracks_,
 playerController = playerController_,
 imageCache = imageCache_,
 contentView = contentView_,
+userKey = userKey_,
 tableViewCell = tableViewCell_;
 
 - (id)initWithRdio:(Rdio *)rdio playerController:(PlayerController *)playerController {
@@ -34,12 +35,14 @@ tableViewCell = tableViewCell_;
     self.rdio = nil;
     self.tracks = nil;
     self.imageCache = nil;
+    self.userKey = nil;
     [super dealloc];
 }
 
 - (void)loadTracks {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    [params setValue:@"Track" forKey:@"type"];
+    [params setValue:self.userKey forKey:@"user"];
+    [params setValue:@"100" forKey:@"count"];
     [self.rdio callAPIMethod:@"getTracksInCollection" withParameters:params delegate:self];
 }
 

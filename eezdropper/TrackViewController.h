@@ -7,6 +7,7 @@
 
 @property (nonatomic, assign) IBOutlet UITableViewCell *tableViewCell;
 @property (nonatomic, assign) IBOutlet UIView *contentView;
+@property (nonatomic, retain) NSString *userKey;
 
 - (id)initWithRdio:(Rdio *)rdio playerController:(PlayerController *)playerController;
 

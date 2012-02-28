@@ -3,6 +3,7 @@
 #import "Track.h"
 #import "PlayerController.h"
 #import "AsyncImageView.h"
+#import "MainController.h"
 
 @interface PeerViewController ()
 @property (nonatomic, retain) PlayerController *playerController;
@@ -18,6 +19,7 @@
 tableViewCell = tableViewCell_,
 contentView = contentView_,
 peers = peers_,
+mainController = mainController,
 imageCache = imageCache_,
 playerController = playerController_;
 
@@ -87,7 +89,7 @@ playerController = playerController_;
 	AsyncImageView* peerImage = [[[AsyncImageView alloc] initWithFrame:frame] autorelease];    
 	peerImage.tag = 998;
 	[peerImage loadImageFromURL:[NSURL URLWithString:peer.iconURL] withCache:self.imageCache];
-	[realContentView addSubview:peerImage];
+	cell.accessoryView = peerImage;
     
     if (peer.track != nil) {
         topLabel.text = peer.track.name;
@@ -134,6 +136,10 @@ playerController = playerController_;
     if (peer.track != nil) {
         [self.playerController playTrack:peer.track];        
     }
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"accessory button tapped");
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

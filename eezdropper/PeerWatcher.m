@@ -128,7 +128,7 @@ peerNames = peerNames_;
 - (void)connectToPeer:(NSString *)peerID {
     if (![self connectionPendingFor:peerID]) {
         NSLog(@"connecting to peer: %@ %@", [self.session displayNameForPeer:peerID], peerID);
-        [self.session connectToPeer:peerID withTimeout:3];
+        [self.session connectToPeer:peerID withTimeout:10];
         [self.pendingConnections setObject:[NSDate date] forKey:peerID];
     } else {
         [self cancelIfHung:peerID];
@@ -228,12 +228,13 @@ peerNames = peerNames_;
 
 - (void)playerDidStart:(Track *)track {
     NSLog(@"peerWatcher playerDidStart track name: %@", track.name);
-    self.localPeer.track = track;    
+    self.localPeer.track = track;        
     [self updatePeers];
 }
 
 - (void)playerDidPause {
-    
+    self.localPeer.track = nil;
+    [self updatePeers];
 }
 
 @end
