@@ -1,6 +1,7 @@
 #import "PlayerController.h"
 #import "Track.h"
 #import "PlayerDelegate.h"
+#import "Blindside.h"
 
 @interface PlayerController ()
 @property (nonatomic, retain) Track *currentTrack;
@@ -17,6 +18,11 @@ playerControlView = playerControlView_,
 progressView = progressView_,
 currentTrack = currentTrack_,
 playerDelegate = playerDelegate_;
+
++ (BSInitializer *)blindsideInitializer {
+    SEL selector = @selector(initWithRdio:player:);
+    return [BSInitializer initializerWithClass:self selector:selector argumentKeys:[Rdio class], [RDPlayer class], nil];
+}
 
 - (id)initWithRdio:(Rdio *)rdio player:(RDPlayer *)player {
     if (self = [super init]) {

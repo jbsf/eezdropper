@@ -22,18 +22,20 @@
 		294ABF7C14E7BE06004CAA28 /* navButtonSelectedBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 294ABF7B14E7BE06004CAA28 /* navButtonSelectedBackground.png */; };
 		294ABF7E14E83090004CAA28 /* PlayerControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 294ABF7D14E8308F004CAA28 /* PlayerControlView.xib */; };
 		295067DB14E23EED00960BE2 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067D414E23E0800960BE2 /* GameKit.framework */; };
-		295067DC14E23EFC00960BE2 /* Rdio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067D914E23EC900960BE2 /* Rdio.framework */; };
 		295067E614E23F5A00960BE2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067E114E23F3B00960BE2 /* SystemConfiguration.framework */; };
 		295067E714E23F5E00960BE2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067DF14E23F2200960BE2 /* CFNetwork.framework */; };
 		295067E814E23F6100960BE2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295067DD14E23F0B00960BE2 /* AudioToolbox.framework */; };
 		295067ED14E240CE00960BE2 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295067EC14E240CE00960BE2 /* PlayerController.m */; };
-		295C3C6E14FCB75B00731BB5 /* Objection-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295C3C6D14FCB75B00731BB5 /* Objection-iOS.framework */; };
 		2968D4CF14E704DC00E19DB7 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2968D4CE14E704DC00E19DB7 /* AsyncImageView.m */; };
+		29997B1C1505DC4700C12110 /* Rdio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29997B1B1505DC4700C12110 /* Rdio.framework */; };
 		29C6828714E264400052FC13 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C6828614E264400052FC13 /* Track.m */; };
 		29C6829D14E4D6700052FC13 /* PeerWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C6829C14E4D6700052FC13 /* PeerWatcher.m */; };
 		29C682A014E4F2840052FC13 /* PeerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C6829F14E4F2840052FC13 /* PeerViewController.m */; };
 		29C682A314E4F41D0052FC13 /* Peer.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C682A214E4F41D0052FC13 /* Peer.m */; };
 		29C682A614E61AAE0052FC13 /* todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 29C682A514E61AAE0052FC13 /* todo.txt */; };
+		29C967361507243A00356446 /* libBlindside-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29F6CD9C1505FE0900D8BD99 /* libBlindside-StaticLib.a */; };
+		29C967521508724500356446 /* EezdropperModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967511508724500356446 /* EezdropperModule.m */; };
+		29C96756150873C700356446 /* Rdio+Blindside.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C96755150873C700356446 /* Rdio+Blindside.m */; };
 		29DDA44614E22C850001B7EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DDA44514E22C850001B7EF /* UIKit.framework */; };
 		29DDA44814E22C850001B7EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DDA44714E22C850001B7EF /* Foundation.framework */; };
 		29DDA44A14E22C850001B7EF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DDA44914E22C850001B7EF /* CoreGraphics.framework */; };
@@ -41,6 +43,37 @@
 		29DDA45214E22C850001B7EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DDA45114E22C850001B7EF /* main.m */; };
 		29DDA45614E22C850001B7EF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DDA45514E22C850001B7EF /* AppDelegate.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		29C967341507243000356446 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29F6CD8B1505FE0900D8BD99 /* Blindside.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 29997B461505EC0B00C12110;
+			remoteInfo = "Blindside-StaticLib";
+		};
+		29F6CD971505FE0900D8BD99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29F6CD8B1505FE0900D8BD99 /* Blindside.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 29CAC6E4150292AD00731862;
+			remoteInfo = Blindside;
+		};
+		29F6CD991505FE0900D8BD99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29F6CD8B1505FE0900D8BD99 /* Blindside.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 29CAC7001502932000731862;
+			remoteInfo = Specs;
+		};
+		29F6CD9B1505FE0900D8BD99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29F6CD8B1505FE0900D8BD99 /* Blindside.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 29997B471505EC0B00C12110;
+			remoteInfo = "Blindside-StaticLib";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		290476A014E71BE10012E6BE /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../../../../../Users/jb/workspace/eezdropper/eezdropper/LoginViewController.h; sourceTree = "<group>"; };
@@ -62,15 +95,14 @@
 		294ABF7B14E7BE06004CAA28 /* navButtonSelectedBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navButtonSelectedBackground.png; sourceTree = "<group>"; };
 		294ABF7D14E8308F004CAA28 /* PlayerControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PlayerControlView.xib; path = ../../../../../Users/jb/workspace/eezdropper/eezdropper/PlayerControlView.xib; sourceTree = "<group>"; };
 		295067D414E23E0800960BE2 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		295067D914E23EC900960BE2 /* Rdio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Rdio.framework; sourceTree = "<group>"; };
 		295067DD14E23F0B00960BE2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		295067DF14E23F2200960BE2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		295067E114E23F3B00960BE2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		295067EB14E240CE00960BE2 /* PlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerController.h; sourceTree = "<group>"; };
 		295067EC14E240CE00960BE2 /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerController.m; sourceTree = "<group>"; };
-		295C3C6D14FCB75B00731BB5 /* Objection-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Objection-iOS.framework"; path = "../../../../Users/jb/workspace/eezdropper/Objection-iOS.framework"; sourceTree = "<group>"; };
 		2968D4CE14E704DC00E19DB7 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		2968D4D014E704EA00E19DB7 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncImageView.h; path = ../../../../../Users/jb/workspace/eezdropper/eezdropper/AsyncImageView.h; sourceTree = "<group>"; };
+		29997B1B1505DC4700C12110 /* Rdio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rdio.framework; path = Vendor/Rdio.framework; sourceTree = "<group>"; };
 		29C6828414E25EA30052FC13 /* eezdropper-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "eezdropper-Prefix.pch"; sourceTree = "<group>"; };
 		29C6828514E264400052FC13 /* Track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
 		29C6828614E264400052FC13 /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
@@ -82,6 +114,10 @@
 		29C682A214E4F41D0052FC13 /* Peer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Peer.m; sourceTree = "<group>"; };
 		29C682A414E500540052FC13 /* PeerWatcherDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeerWatcherDelegate.h; sourceTree = "<group>"; };
 		29C682A514E61AAE0052FC13 /* todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = todo.txt; sourceTree = "<group>"; };
+		29C967501508724500356446 /* EezdropperModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EezdropperModule.h; sourceTree = "<group>"; };
+		29C967511508724500356446 /* EezdropperModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EezdropperModule.m; sourceTree = "<group>"; };
+		29C96755150873C700356446 /* Rdio+Blindside.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Rdio+Blindside.m"; sourceTree = "<group>"; };
+		29C967651508826900356446 /* Rdio+Blindside.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Rdio+Blindside.h"; sourceTree = "<group>"; };
 		29DDA44114E22C850001B7EF /* eezdropper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eezdropper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29DDA44514E22C850001B7EF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		29DDA44714E22C850001B7EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -91,6 +127,7 @@
 		29DDA45114E22C850001B7EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29DDA45414E22C850001B7EF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		29DDA45514E22C850001B7EF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		29F6CD8B1505FE0900D8BD99 /* Blindside.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Blindside.xcodeproj; path = Externals/blindside/Blindside.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29C967361507243A00356446 /* libBlindside-StaticLib.a in Frameworks */,
 				29445BAD14E657F0000BE425 /* Security.framework in Frameworks */,
 				295067DB14E23EED00960BE2 /* GameKit.framework in Frameworks */,
 				29DDA44814E22C850001B7EF /* Foundation.framework in Frameworks */,
@@ -106,8 +144,7 @@
 				295067E814E23F6100960BE2 /* AudioToolbox.framework in Frameworks */,
 				295067E714E23F5E00960BE2 /* CFNetwork.framework in Frameworks */,
 				295067E614E23F5A00960BE2 /* SystemConfiguration.framework in Frameworks */,
-				295067DC14E23EFC00960BE2 /* Rdio.framework in Frameworks */,
-				295C3C6E14FCB75B00731BB5 /* Objection-iOS.framework in Frameworks */,
+				29997B1C1505DC4700C12110 /* Rdio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +157,8 @@
 				29DDA45114E22C850001B7EF /* main.m */,
 				29DDA45414E22C850001B7EF /* AppDelegate.h */,
 				29DDA45514E22C850001B7EF /* AppDelegate.m */,
+				29C967501508724500356446 /* EezdropperModule.h */,
+				29C967511508724500356446 /* EezdropperModule.m */,
 				29C6828114E25A860052FC13 /* Controllers */,
 				29C6828214E25A900052FC13 /* Resources */,
 			);
@@ -141,6 +180,14 @@
 				2968D4D014E704EA00E19DB7 /* AsyncImageView.h */,
 			);
 			name = AsyncImageView;
+			sourceTree = "<group>";
+		};
+		29997B801505F59C00C12110 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				29F6CD8B1505FE0900D8BD99 /* Blindside.xcodeproj */,
+			);
+			name = Externals;
 			sourceTree = "<group>";
 		};
 		29C6828114E25A860052FC13 /* Controllers */ = {
@@ -196,10 +243,20 @@
 			name = Domain;
 			sourceTree = "<group>";
 		};
+		29C96753150873A200356446 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				29C967651508826900356446 /* Rdio+Blindside.h */,
+				29C96755150873C700356446 /* Rdio+Blindside.m */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		29DDA43614E22C850001B7EF = {
 			isa = PBXGroup;
 			children = (
 				29DDA44B14E22C850001B7EF /* App */,
+				29997B801505F59C00C12110 /* Externals */,
 				29DDA44414E22C850001B7EF /* Frameworks */,
 				29DDA44214E22C850001B7EF /* Products */,
 			);
@@ -216,12 +273,11 @@
 		29DDA44414E22C850001B7EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				295C3C6D14FCB75B00731BB5 /* Objection-iOS.framework */,
+				29997B1B1505DC4700C12110 /* Rdio.framework */,
 				29445BAB14E6569F000BE425 /* Security.framework */,
 				295067E114E23F3B00960BE2 /* SystemConfiguration.framework */,
 				295067DF14E23F2200960BE2 /* CFNetwork.framework */,
 				295067DD14E23F0B00960BE2 /* AudioToolbox.framework */,
-				295067D914E23EC900960BE2 /* Rdio.framework */,
 				295067D414E23E0800960BE2 /* GameKit.framework */,
 				29DDA44514E22C850001B7EF /* UIKit.framework */,
 				29DDA44714E22C850001B7EF /* Foundation.framework */,
@@ -233,12 +289,23 @@
 		29DDA44B14E22C850001B7EF /* App */ = {
 			isa = PBXGroup;
 			children = (
+				29C96753150873A200356446 /* Extensions */,
 				2968D4CB14E7042E00E19DB7 /* External */,
 				29C6828314E25AAB0052FC13 /* Domain */,
 				295067EA14E2408700960BE2 /* UI */,
 			);
 			name = App;
 			path = eezdropper;
+			sourceTree = "<group>";
+		};
+		29F6CD8C1505FE0900D8BD99 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29F6CD981505FE0900D8BD99 /* Blindside.framework */,
+				29F6CD9A1505FE0900D8BD99 /* Specs */,
+				29F6CD9C1505FE0900D8BD99 /* libBlindside-StaticLib.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +322,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				29C967351507243000356446 /* PBXTargetDependency */,
 			);
 			name = eezdropper;
 			productName = eezdropper;
@@ -281,12 +349,42 @@
 			mainGroup = 29DDA43614E22C850001B7EF;
 			productRefGroup = 29DDA44214E22C850001B7EF /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 29F6CD8C1505FE0900D8BD99 /* Products */;
+					ProjectRef = 29F6CD8B1505FE0900D8BD99 /* Blindside.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				29DDA44014E22C850001B7EF /* eezdropper */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		29F6CD981505FE0900D8BD99 /* Blindside.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Blindside.framework;
+			remoteRef = 29F6CD971505FE0900D8BD99 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		29F6CD9A1505FE0900D8BD99 /* Specs */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = Specs;
+			remoteRef = 29F6CD991505FE0900D8BD99 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		29F6CD9C1505FE0900D8BD99 /* libBlindside-StaticLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libBlindside-StaticLib.a";
+			remoteRef = 29F6CD9B1505FE0900D8BD99 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		29DDA43F14E22C850001B7EF /* Resources */ = {
@@ -326,10 +424,20 @@
 				2968D4CF14E704DC00E19DB7 /* AsyncImageView.m in Sources */,
 				290476A214E71BE10012E6BE /* LoginViewController.m in Sources */,
 				294ABF7814E7AA3B004CAA28 /* MainController.m in Sources */,
+				29C967521508724500356446 /* EezdropperModule.m in Sources */,
+				29C96756150873C700356446 /* Rdio+Blindside.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		29C967351507243000356446 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Blindside-StaticLib";
+			targetProxy = 29C967341507243000356446 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		29DDA44E14E22C850001B7EF /* InfoPlist.strings */ = {
@@ -395,16 +503,21 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					/Users/jb/workspace/eezdropper,
+					"\"$(SRCROOT)/Vendor\"",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "eezdropper/eezdropper-Prefix.pch";
+				"HEADER_SEARCH_PATHS[arch=*]" = $SRCROOT/Externals/blindside/Headers;
 				INFOPLIST_FILE = "eezdropper/eezdropper-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
-				"OTHER_LDFLAGS[arch=*]" = "-all_load";
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -418,16 +531,21 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					/Users/jb/workspace/eezdropper,
+					"\"$(SRCROOT)/Vendor\"",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "eezdropper/eezdropper-Prefix.pch";
+				"HEADER_SEARCH_PATHS[arch=*]" = $SRCROOT/Externals/blindside/Headers;
 				INFOPLIST_FILE = "eezdropper/eezdropper-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
-				"OTHER_LDFLAGS[arch=*]" = "-all_load";
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

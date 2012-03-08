@@ -8,15 +8,18 @@ rdio = rdio_,
 appDelegate = appDelegate_,
 loginButton = loginButton_;
 
-- (id)initWithRdio:(Rdio *)rdio {
-    if (self = [super init]) {
-        self.rdio = rdio;
-    }
-    return self;
++ (BSInitializer *)blindsideInitializer {
+    return [BSInitializer initializerWithClass:self 
+                                      selector:@selector(initWithNibName:bundle:) 
+                                  argumentKeys:@"loginViewNib", @"loginViewBundle", nil];
+}
+
++ (NSDictionary *)blindsideProperties {
+    return [NSDictionary dictionaryWithObjectsAndKeys:[Rdio class], @"rdio", nil];
 }
 
 - (void)dealloc {
-    [rdio_ release];
+    self.rdio = nil;
     [super dealloc];
 }
 

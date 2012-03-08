@@ -1,21 +1,25 @@
 #import "AppDelegate.h"
 #import <GameKit/GameKit.h>
-#import <Objection-iOS/Objection.h>
+#import "Blindside.h"
 #import "PeerWatcher.h"
 #import "PeerViewController.h"
 #import "TrackViewController.h"
 #import "LoginViewController.h"
 #import "Peer.h"
 #import "MainController.h"
+#import "EezdropperModule.h"
+#import "Rdio+Blindside.h"
 
 @interface AppDelegate ()
 
 @property (nonatomic, retain) PeerViewController *peerViewController;
 @property (nonatomic, retain) TrackViewController *trackViewController;
 @property (nonatomic, retain) PlayerController *playerController;
+@property (nonatomic, retain) BSInjector *injector;
 
 - (void)showLoginController;
 - (void)initializePeerWatcher;
+- (void)initializeBlindside;
 @end
 
 @implementation AppDelegate
@@ -23,6 +27,7 @@
 @synthesize 
 window = window_, 
 rdio = rdio_,
+injector = injector_,
 peerViewController = peerViewController_,
 trackViewController = trackViewController,
 playerController = playerController_,
@@ -32,7 +37,8 @@ peerWatcher = peerWatcher_;
     NSLog(@"my device name is: %@", [UIDevice currentDevice].name);
 
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    self.rdio = [[Rdio alloc] initWithConsumerKey:@"deanv9w6s66jg45ghzeaxu6z" andSecret:@"Qz2AWKDcSM" delegate:nil];
+    BSModule *module = [EezdropperModule module];
+    self.injector = [BSInjector injectorWithModule:module];
 
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"accessToken"];
     NSLog(@"booting. accessToken = %@", accessToken);
@@ -48,9 +54,13 @@ peerWatcher = peerWatcher_;
     return YES;
 }
 
+- (void)initializeBlindside {
+    
+}
+
 - (void)showLoginController {
-    LoginViewController *loginController = [[LoginViewController alloc] initWithNibName:@"LoginView" bundle:nil];
-    loginController.rdio = self.rdio;
+    LoginViewController *loginController = [self.injector getInstance:[LoginViewController class]];
+    
     loginController.appDelegate = self;
     self.rdio.delegate = loginController;
     
@@ -74,6 +84,7 @@ peerWatcher = peerWatcher_;
     self.peerViewController.mainController = mainController;
     [mainController addPlayerControlView: self.playerController.playerControlView];
 
+    
     self.window.rootViewController = mainController;    
 
     self.rdio.delegate = self;
