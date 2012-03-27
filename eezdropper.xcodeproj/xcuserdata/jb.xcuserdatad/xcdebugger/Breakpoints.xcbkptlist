@@ -9,11 +9,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "eezdropper/AppDelegate.m"
-         timestampString = "352883273.136922"
+         timestampString = "353043995.885949"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "43"
-         endingLineNumber = "43"
+         startingLineNumber = "36"
+         endingLineNumber = "36"
          landmarkName = "-application:didFinishLaunchingWithOptions:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -22,19 +22,19 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "Externals/blindside/Source/BSInjector.m"
-         timestampString = "352879432.398228"
+         filePath = "Externals/blindside/Specs/BSInjectorSpec.mm"
+         timestampString = "354516980.314325"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "31"
-         endingLineNumber = "31"
-         landmarkName = "-getInstance:"
-         landmarkType = "5">
+         startingLineNumber = "116"
+         endingLineNumber = "116"
+         landmarkName = "describe(@&quot;BSInjector&quot;, ^{ __block BSModule *module; __block BSInjector *injector; beforeEach(^{ module = [BSModule module]; injector = [[[BSInjector alloc] initWithModule:module] autorelease]; }); it(@&quot;can bind an instance to a class&quot;, ^{ NSString *instance = @&quot;foo&quot;; [module bind:[NSObject class] toInstance:instance]; id object = [injector getInstance:[NSObject class]]; expect(object == instance).to(equal(YES)); }); it(@&quot;can bind an instance to a string&quot;, ^{ NSString *instance = @&quot;foo&quot;; [module bind:@&quot;key&quot; toInstance:instance]; id object = [injector getInstance:@&quot;key&quot;]; expect(object == instance).to(equal(YES)); }); describe(@&quot;building an object whose class has a blindsideInitializer&quot;, ^{ it(@&quot;resolves first-order dependencies&quot;, ^{ Address *address = [[[Address alloc] init] autorelease]; [module bind:[Address class] toInstance:address]; House *house = [injector getInstance:[House class]]; expect(house).to_not(be_nil()); expect(house.address).to_not(be_nil()); }); context(@&quot;when the initializer has more than two arguments&quot;, ^{ it(@&quot;injects all the arguments&quot;, ^{ NSString *street = @&quot;123 Market St.&quot;; City *city = [[[City alloc] init] autorelease]; State *state = [[[State alloc] init] autorelease]; NSString *zip = @&quot;94110&quot;; [module bind:@&quot;street&quot; toInstance:street]; [module bind:@&quot;city&quot; toInstance:city]; [module bind:@&quot;state&quot; toInstance:state]; [module bind:@&quot;zip&quot; toInstance:zip]; Address *address = [injector getInstance:[Address class]]; expect(address.street == street).to(equal(YES)); expect(address.city == city).to(equal(YES)); expect(address.state == state).to(equal(YES)); expect(address.zip == zip).to(equal(YES)); }); context(@&quot;when some argument keys have no bound values&quot;, ^{ it(@&quot;injects nil&quot;, ^{ NSString *street = @&quot;123 Market St.&quot;; City *city = [[[City alloc] init] autorelease]; [module bind:@&quot;street&quot; toInstance:street]; [module bind:@&quot;city&quot; toInstance:city]; Address *address = [injector getInstance:[Address class]]; expect(address.street == street).to(equal(YES)); expect(address.city == city).to(equal(YES)); expect(address.state).to(be_nil); expect(address.zip).to(be_nil); }); }); }); context(@&quot;when the class also has blindsideProperties&quot;, ^{ __block Garage *garage; __block Driveway *driveway; beforeEach(^{ garage = [[[Garage alloc] init] autorelease]; [module bind:[Garage class] toInstance:garage]; driveway = [[[Driveway alloc] init] autorelease]; [module bind:@&quot;theDriveway&quot; toInstance:driveway]; }); it(@&quot;injects the properties&quot;, ^{ House *house = [injector getInstance:[House class]]; expect(house.garage == garage).to(equal(YES)); expect(house.driveway == driveway).to(equal(YES)); }); it(@&quot;injects superclass properties too&quot;, ^{ TennisCourt *tennisCourt = [[[TennisCourt alloc] init] autorelease]; [module bind:[TennisCourt class] toInstance:tennisCourt]; Mansion *mansion = [injector getInstance:[Mansion class]]; expect(mansion.tennisCourt == tennisCourt).to(equal(YES)); expect(mansion.garage == garage).to(equal(YES)); expect(mansion.driveway == driveway).to(equal(YES)); }); }); }); describe(@&quot;scoping&quot;, ^{ describe(@&quot;singleton&quot;, ^{ it(@&quot;uses the same instance for all injection points&quot;, ^{ [module bind:[House class] withScope:[BSSingleton scope]]; House *house1 = [injector getInstance:[House class]]; House *house2 = [injector getInstance:[House class]]; expect(house1 == house2).to(equal(YES)); }); }); describe(@&quot;unscoped&quot;, ^{ it(@&quot;uses a different instance for each injection point&quot;, ^{ House *house1 = [injector getInstance:[House class]]; House *house2 = [injector getInstance:[House class]]; expect(house1 == house2).to(equal(NO)); }); }); }); })"
+         landmarkType = "6">
       </FileBreakpoint>
    </FileBreakpoints>
    <ExceptionBreakpoints>
       <ExceptionBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          scope = "0"

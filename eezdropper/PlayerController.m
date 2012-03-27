@@ -28,6 +28,8 @@ playerDelegate = playerDelegate_;
     if (self = [super init]) {
         self.rdio = rdio;
         self.player = player;
+        [self.player addObserver:self forKeyPath:@"position" options:NSKeyValueObservingOptionNew context:nil];
+        self.player.delegate = self; 
         [[NSBundle mainBundle] loadNibNamed:@"PlayerControlView" owner:self options:nil];
     }
     return self;

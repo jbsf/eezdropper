@@ -5,7 +5,7 @@
 
 @synthesize 
 rdio = rdio_,
-appDelegate = appDelegate_,
+mainController = mainController_,
 loginButton = loginButton_;
 
 + (BSInitializer *)blindsideInitializer {
@@ -15,12 +15,20 @@ loginButton = loginButton_;
 }
 
 + (NSDictionary *)blindsideProperties {
-    return [NSDictionary dictionaryWithObjectsAndKeys:[Rdio class], @"rdio", nil];
+    return [NSDictionary dictionaryWithObjectsAndKeys:
+            [Rdio class], @"rdio", 
+            [MainController class], [MainController class],
+            nil];
 }
 
 - (void)dealloc {
     self.rdio = nil;
     [super dealloc];
+}
+
+- (void)setRdio:(Rdio *)rdio {
+    rdio_ = rdio;
+    self.rdio.delegate = self;
 }
 
 - (IBAction) didTapLogin {
@@ -37,7 +45,7 @@ loginButton = loginButton_;
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:accessToken forKey:@"accessToken"];
     [userDefaults setObject:userData    forKey:@"userData"];
-    [self.appDelegate showApp:accessToken];
+    [self.mainController loginDidSucceed];
 }
 
 - (void) rdioAuthorizationFailed:(NSString *)error {

@@ -2,12 +2,12 @@
 #import <Rdio/Rdio.h>
 #import "Blindside.h"
 
-@class AppDelegate;
+@class MainController;
 
 @interface LoginViewController : UIViewController<RdioDelegate>
 
 @property (nonatomic, retain) Rdio *rdio;
-@property (nonatomic, assign) AppDelegate *appDelegate;
+@property (nonatomic, assign) MainController *mainController;
 @property (nonatomic, assign) IBOutlet UIButton *loginButton;
 
 - (IBAction) didTapLogin;

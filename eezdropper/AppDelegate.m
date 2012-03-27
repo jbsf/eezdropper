@@ -12,14 +12,10 @@
 
 @interface AppDelegate ()
 
-@property (nonatomic, retain) PeerViewController *peerViewController;
-@property (nonatomic, retain) TrackViewController *trackViewController;
-@property (nonatomic, retain) PlayerController *playerController;
 @property (nonatomic, retain) BSInjector *injector;
 
 - (void)showLoginController;
 - (void)initializePeerWatcher;
-- (void)initializeBlindside;
 @end
 
 @implementation AppDelegate
@@ -28,67 +24,25 @@
 window = window_, 
 rdio = rdio_,
 injector = injector_,
-peerViewController = peerViewController_,
-trackViewController = trackViewController,
-playerController = playerController_,
 peerWatcher = peerWatcher_;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSLog(@"my device name is: %@", [UIDevice currentDevice].name);
 
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     BSModule *module = [EezdropperModule module];
+    [module bind:[AppDelegate class] toInstance:self];
     self.injector = [BSInjector injectorWithModule:module];
 
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"accessToken"];
     NSLog(@"booting. accessToken = %@", accessToken);
     
-    if (accessToken == nil) {
-        [self showLoginController];
-    } else {
-        [self showApp:accessToken];
-    }
+    MainController *mainController = [self.injector getInstance:[MainController class]];
 
+    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    self.window.rootViewController = mainController;    
     [self.window makeKeyAndVisible];
     
     return YES;
-}
-
-- (void)initializeBlindside {
-    
-}
-
-- (void)showLoginController {
-    LoginViewController *loginController = [self.injector getInstance:[LoginViewController class]];
-    
-    loginController.appDelegate = self;
-    self.rdio.delegate = loginController;
-    
-    self.window.rootViewController = loginController;    
-}
-
-- (void)showApp:(NSString *)accessToken {
-    self.playerController = [[[PlayerController alloc] initWithRdio:self.rdio player:self.rdio.player] autorelease];
-    [self.rdio.player addObserver:self.playerController forKeyPath:@"position" options:NSKeyValueObservingOptionNew context:nil];
-    self.rdio.player.delegate = self.playerController;    
-    
-    self.trackViewController = [[[TrackViewController alloc] initWithRdio:self.rdio playerController:self.playerController] autorelease];
-    
-    self.peerViewController = [[PeerViewController alloc] initWithPlayerController:self.playerController];
-    
-    [self initializePeerWatcher];
-    
-    MainController *mainController = [[[MainController alloc] initWithNibName:@"MainView" bundle:nil] autorelease]; 
-    mainController.peerController = self.peerViewController;
-    mainController.trackController = self.trackViewController;
-    self.peerViewController.mainController = mainController;
-    [mainController addPlayerControlView: self.playerController.playerControlView];
-
-    
-    self.window.rootViewController = mainController;    
-
-    self.rdio.delegate = self;
-    [self.rdio authorizeUsingAccessToken:accessToken fromController:mainController];
 }
 
 - (void)rdioDidAuthorizeUser:(NSDictionary *)user withAccessToken:(NSString *)accessToken {
@@ -107,8 +61,6 @@ peerWatcher = peerWatcher_;
     self.window = nil;
     self.peerWatcher = nil;
     self.rdio = nil;
-    self.playerController = nil;
-    self.peerViewController = nil;
     [super dealloc];
 }
 

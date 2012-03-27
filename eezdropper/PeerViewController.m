@@ -4,6 +4,7 @@
 #import "PlayerController.h"
 #import "AsyncImageView.h"
 #import "MainController.h"
+#import "Blindside.h"
 
 @interface PeerViewController ()
 @property (nonatomic, retain) PlayerController *playerController;
@@ -22,6 +23,16 @@ peers = peers_,
 mainController = mainController,
 imageCache = imageCache_,
 playerController = playerController_;
+
++ (BSInitializer *)blinsideInitializer {
+    return [BSInitializer initializerWithClass:self 
+                                      selector:@selector(initWithPlayerController:) 
+                                  argumentKeys:[PlayerController class], nil];
+}
+
++ (NSDictionary *)blindsideProperties {
+    return [NSDictionary dictionaryWithObjectsAndKeys:[MainController class], [MainController class], nil];
+}
 
 - (id)initWithPlayerController:(PlayerController *)playerController {
     if (self = [super init]) {

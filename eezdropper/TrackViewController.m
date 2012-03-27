@@ -2,6 +2,7 @@
 #import "Track.h"
 #import "PlayerController.h"
 #import "AsyncImageView.h"
+#import "Blindside.h"
 
 @interface TrackViewController ()
 @property (nonatomic, retain) Rdio *rdio;
@@ -20,6 +21,11 @@ imageCache = imageCache_,
 contentView = contentView_,
 userKey = userKey_,
 tableViewCell = tableViewCell_;
+
++ (BSInitializer *)blindsideInitializer {
+    SEL selector = @selector(initWithRdio:playerController:);
+    return [BSInitializer initializerWithClass:self selector:selector argumentKeys:[Rdio class], [PlayerController class], nil];
+}
 
 - (id)initWithRdio:(Rdio *)rdio playerController:(PlayerController *)playerController {
     if (self = [super init]) {
