@@ -70,14 +70,7 @@ peerWatcher = peerWatcher_;
         return;
     }
     
-    Peer *localPeer = [[[Peer alloc] init] autorelease];
-    NSDictionary *userData = [[NSUserDefaults standardUserDefaults] objectForKey:@"userData"];
-    NSLog(@"booting. userData = %@", userData);
-    
-    localPeer.firstName = [userData objectForKey:@"firstName"];
-    localPeer.lastName  = [userData objectForKey:@"lastName"];
-    localPeer.rdioKey   = [userData objectForKey:@"key"];
-    localPeer.iconURL   = [userData objectForKey:@"icon"];
+
     
     self.peerWatcher = [[PeerWatcher alloc] initWithLocalPeer:localPeer delegate:self.peerViewController];
     

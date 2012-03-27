@@ -15,5 +15,7 @@
     [self bind:[Rdio class] withScope:[BSSingleton scope]];
 
     [self bind:@"loginViewNib" toInstance:@"LoginView"];
+    
+    [self bind:@"localPeer" toBlock:	
 }
 @end

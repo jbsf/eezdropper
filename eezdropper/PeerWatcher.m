@@ -1,6 +1,7 @@
 #import "PeerWatcher.h"
 #import "Peer.h"
 #import "Track.h"
+#import "Blindside.h"
 
 @interface PeerWatcher ()
 
@@ -35,6 +36,10 @@ localPeer = localPeer_,
 timer = timer_,
 pendingConnections = pendingConnections_,
 peerNames = peerNames_;
+
++ (BSInitializer *)blindsideInitializer {
+    return [BSInitializer initializerWithClass:self selector:selector argumentKeys:[Peer class], nil
+}
 
 - (id)initWithLocalPeer:(Peer *)localPeer delegate:(id<PeerWatcherDelegate>)delegate {
     if (self = [super init]) {
