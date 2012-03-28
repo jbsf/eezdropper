@@ -38,7 +38,7 @@ pendingConnections = pendingConnections_,
 peerNames = peerNames_;
 
 + (BSInitializer *)blindsideInitializer {
-    return [BSInitializer initializerWithClass:self selector:selector argumentKeys:[Peer class], nil
+    return [BSInitializer initializerWithClass:self selector:selector argumentKeys:@"localPeer", @"peerWatcherDelegate", nil];
 }
 
 - (id)initWithLocalPeer:(Peer *)localPeer delegate:(id<PeerWatcherDelegate>)delegate {
